@@ -8,25 +8,24 @@ export function App() {
   const [profile] = useState<Profile>({
     name: 'Pete McCarthy',
     bio: 'AI Product Leadership',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80',
+    avatar: '/images/profile.jpg',
     username: 'peteknowsai',
     socials: {
       twitter: 'https://twitter.com/peteknowsai',
+      x: 'https://x.com/peteknowsai',
       github: 'https://github.com/peteknowsai',
-      linkedin: 'https://linkedin.com/in/peteknowsai',
-      substack: 'https://peteknowsai.substack.com',
+      linkedin: 'https://www.linkedin.com/in/peteknowsai',
+      substack: 'https://substack.com/@peteknowsai',
       youtube: 'https://youtube.com/@peteknowsai',
-      email: 'pete@example.com',
+      email: 'pete@peteknowsai.xyz',
     }
   });
   
   // Links data - edit this directly in code
   const [links] = useState<Link[]>([
-    { id: '1', title: 'My AI Newsletter', url: 'https://substack.com', active: true, color: 'bg-blue-400 hover:bg-blue-500' },
-    { id: '2', title: 'AI Product Strategy Guide', url: 'https://guide-example.com', active: true, color: 'bg-purple-400 hover:bg-purple-500' },
-    { id: '3', title: 'Latest AI Research', url: 'https://research-example.com', active: true, color: 'bg-indigo-400 hover:bg-indigo-500' },
-    { id: '4', title: 'Speaking Engagements', url: 'https://speaking-example.com', active: true, color: 'bg-green-400 hover:bg-green-500' },
-    { id: '5', title: 'AI Product Framework', url: 'https://framework-example.com', active: true, color: 'bg-yellow-400 hover:bg-yellow-500' },
+    { id: '1', title: 'YouTube Channel', url: 'https://youtube.com/@peteknowsai', active: true, color: 'bg-red-400 hover:bg-red-500' },
+    { id: '2', title: 'Newsletter', url: 'https://substack.com/@peteknowsai', active: true, color: 'bg-blue-400 hover:bg-blue-500' },
+    { id: '3', title: 'home0', url: 'https://www.home0.xyz', active: true, color: 'bg-green-400 hover:bg-green-500' },
   ]);
 
   return (

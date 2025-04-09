@@ -5,6 +5,7 @@ export interface Profile {
   username?: string;
   socials?: {
     twitter?: string;
+    x?: string;
     github?: string;
     linkedin?: string;
     substack?: string;

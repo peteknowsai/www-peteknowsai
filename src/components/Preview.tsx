@@ -1,6 +1,19 @@
 import React from 'react';
 import { Profile, Link } from '../types';
-import { ExternalLink, Github, Linkedin, Mail, Newspaper, Twitter, Youtube } from 'lucide-react';
+import { ExternalLink, Github, Linkedin, Mail } from 'lucide-react';
+
+// X logo (formerly Twitter) - more accurate representation
+const XIcon = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153ZM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644Z" />
+  </svg>
+);
 
 interface PreviewProps {
   profile: Profile;
@@ -38,6 +51,7 @@ const Preview: React.FC<PreviewProps> = ({ profile, links }) => {
             src={profile.avatar} 
             alt={`${profile.name}'s profile`} 
             className="w-full h-full object-cover"
+            style={{ objectPosition: '50% 20%' }}
           />
         </div>
         
@@ -82,13 +96,13 @@ const Preview: React.FC<PreviewProps> = ({ profile, links }) => {
       {/* Social Media Icons */}
       <div className="flex justify-center space-x-4 mt-6">
         <a 
-          href={profile.socials?.twitter || "#"} 
+          href={profile.socials?.x || "#"} 
           target="_blank" 
           rel="noopener noreferrer" 
           className="p-2 bg-white transition-all duration-200 hover:-translate-y-1"
           style={{ border: '2px solid black', boxShadow: 'rgb(0, 0, 0) 3px 3px 0px 0px' }}
         >
-          <Twitter size={24} />
+          <XIcon />
         </a>
         <a 
           href={profile.socials?.github || "#"} 
@@ -109,24 +123,6 @@ const Preview: React.FC<PreviewProps> = ({ profile, links }) => {
           <Linkedin size={24} />
         </a>
         <a 
-          href={profile.socials?.substack || "#"} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="p-2 bg-white transition-all duration-200 hover:-translate-y-1"
-          style={{ border: '2px solid black', boxShadow: 'rgb(0, 0, 0) 3px 3px 0px 0px' }}
-        >
-          <Newspaper size={24} />
-        </a>
-        <a 
-          href={profile.socials?.youtube || "#"} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="p-2 bg-white transition-all duration-200 hover:-translate-y-1"
-          style={{ border: '2px solid black', boxShadow: 'rgb(0, 0, 0) 3px 3px 0px 0px' }}
-        >
-          <Youtube size={24} />
-        </a>
-        <a 
           href={`mailto:${profile.socials?.email || ""}`}
           className="p-2 bg-white transition-all duration-200 hover:-translate-y-1"
           style={{ border: '2px solid black', boxShadow: 'rgb(0, 0, 0) 3px 3px 0px 0px' }}
@@ -137,7 +133,7 @@ const Preview: React.FC<PreviewProps> = ({ profile, links }) => {
       
       {/* Copyright Footer */}
       <div className="mt-12 text-center">
-        <p className="text-sm">© {new Date().getFullYear()} {profile.name} | Pete Knows AI</p>
+        <p className="text-sm"> {new Date().getFullYear()} {profile.name} | Pete Knows AI</p>
       </div>
     </div>
   );
