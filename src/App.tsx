@@ -7,7 +7,7 @@ export function App() {
   // Profile data - edit this directly in code
   const [profile] = useState<Profile>({
     name: 'Pete McCarthy',
-    bio: 'AI Product Leadership',
+    bio: 'AI Product Leader',
     avatar: '/images/profile.jpg',
     username: 'peteknowsai',
     socials: {
