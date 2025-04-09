@@ -17,11 +17,25 @@ if (!fs.existsSync(outputDir)) {
 
 async function generateImages() {
   try {
-    // Generate OG Image (1200x630)
+    // Generate OG Image (1200x630) as JPG
     await sharp(inputImage)
       .resize(1200, 630, { fit: 'cover', position: 'center' })
       .toFile(path.join(outputDir, 'og-image.jpg'));
     console.log('✅ Generated og-image.jpg');
+    
+    // Generate OG Image (1200x630) as PNG for WhatsApp
+    await sharp(inputImage)
+      .resize(1200, 630, { fit: 'cover', position: 'center' })
+      .png({ quality: 90 })
+      .toFile(path.join(outputDir, 'whatsapp.png'));
+    console.log('✅ Generated whatsapp.png');
+
+    // Generate Square OG Image (600x600) - sometimes works better with WhatsApp
+    await sharp(inputImage)
+      .resize(600, 600, { fit: 'cover', position: 'center' })
+      .png({ quality: 90 })
+      .toFile(path.join(outputDir, 'square-og.png'));
+    console.log('✅ Generated square-og.png');
 
     // Generate Apple Touch Icon (180x180)
     await sharp(inputImage)
