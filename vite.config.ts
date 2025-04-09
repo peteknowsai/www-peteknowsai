@@ -10,7 +10,7 @@ export default defineConfig({
 
       // ref: https://vite.dev/guide/api-plugin.html#transformindexhtml
       transformIndexHtml(html) {
-        if (process.env.NODE_ENV !== "development" && process.env.SHOW_WATERMARK !== "false") {
+        if (false) { // Always disable watermark
           return [
             {
               tag: "style",
