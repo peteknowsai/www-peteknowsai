@@ -81,7 +81,7 @@ const Preview: React.FC<PreviewProps> = ({ profile, links }) => {
             {bookingLinks.map((link) => (
               <a
                 key={link.id}
-                href={`https://cal.com/${link.calLink}`}
+                href={`https://cal.com/${link.calLink}?overlayCalendar=true&layout=column_view`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`relative group w-full p-4 ${link.color} transform transition-all duration-200 hover:-translate-y-1 hover:rotate-1 block cursor-pointer`}
