@@ -21,4 +21,6 @@ export interface Link {
   active: boolean;
   color?: string;
   isDownload?: boolean;
+  isCalBooking?: boolean;
+  calLink?: string;
 }

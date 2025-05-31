@@ -1,6 +1,6 @@
 import React from 'react';
 import { Profile, Link } from '../types';
-import { ExternalLink, Github, Linkedin, Mail, Download } from 'lucide-react';
+import { ExternalLink, Github, Linkedin, Mail, Download, Calendar } from 'lucide-react';
 
 // X logo (formerly Twitter) - more accurate representation
 const XIcon = () => (
@@ -21,6 +21,7 @@ interface PreviewProps {
 }
 
 const Preview: React.FC<PreviewProps> = ({ profile, links }) => {
+
   // Define color classes for links
   const colorClasses = [
     'bg-red-400 hover:bg-red-500',
@@ -40,6 +41,10 @@ const Preview: React.FC<PreviewProps> = ({ profile, links }) => {
     }
     return link;
   });
+
+  // Separate booking buttons from other links
+  const bookingLinks = linksWithColors.filter(link => link.isCalBooking);
+  const regularLinks = linksWithColors.filter(link => !link.isCalBooking);
 
   return (
     <div className="bg-[#e0e8e4] rounded-lg overflow-hidden max-w-md mx-auto p-6 pb-12">
@@ -70,7 +75,32 @@ const Preview: React.FC<PreviewProps> = ({ profile, links }) => {
       
       {/* Links */}
       <div className="mb-8">
-        {linksWithColors.map((link) => (
+        {/* Booking buttons side by side */}
+        {bookingLinks.length > 0 && (
+          <div className="grid grid-cols-2 gap-4 mb-4">
+            {bookingLinks.map((link) => (
+              <a
+                key={link.id}
+                href={`https://cal.com/${link.calLink}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`relative group w-full p-4 ${link.color} transform transition-all duration-200 hover:-translate-y-1 hover:rotate-1 block cursor-pointer`}
+                style={{ 
+                  border: '3px solid black', 
+                  boxShadow: 'rgb(0, 0, 0) 5px 5px 0px 0px' 
+                }}
+              >
+                <div className="flex flex-col items-center">
+                  <Calendar size={24} className="mb-2" />
+                  <span className="font-bold text-sm text-center">{link.title}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
+
+        {/* Regular links */}
+        {regularLinks.map((link) => (
           <a
             key={link.id}
             href={link.url}

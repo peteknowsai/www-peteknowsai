@@ -25,7 +25,9 @@ export function App() {
     { id: '1', title: 'GitHub', url: 'https://github.com/peteknowsai', active: true, color: 'bg-gray-400 hover:bg-gray-500' },
     { id: '2', title: 'Newsletter', url: 'https://substack.com/@peteknowsai', active: true, color: 'bg-blue-400 hover:bg-blue-500' },
     { id: '3', title: 'Home0', url: 'https://www.home0.xyz', active: true, color: 'bg-green-400 hover:bg-green-500' },
-    { id: '4', title: 'Download Resume', url: '/resume.pdf', active: true, color: 'bg-yellow-400 hover:bg-yellow-500', isDownload: true },
+    { id: '4', title: 'Quick Chat (15 min)', url: '#', active: true, color: 'bg-indigo-400 hover:bg-indigo-500', isCalBooking: true, calLink: 'peteknowai/15min' },
+    { id: '5', title: 'Deep Dive (30 min)', url: '#', active: true, color: 'bg-teal-400 hover:bg-teal-500', isCalBooking: true, calLink: 'peteknowai/30min' },
+    { id: '6', title: 'Download Resume', url: '/resume.pdf', active: true, color: 'bg-yellow-400 hover:bg-yellow-500', isDownload: true },
   ]);
 
   return (
