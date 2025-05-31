@@ -8,7 +8,7 @@ export function App() {
   const [profile] = useState<Profile>({
     name: 'Pete McCarthy',
     bio: 'AI Product Leader',
-    avatar: '/images/profile.jpg',
+    avatar: '/images/profile-v2.jpg',
     username: 'peteknowsai',
     socials: {
       twitter: 'https://twitter.com/peteknowsai',
