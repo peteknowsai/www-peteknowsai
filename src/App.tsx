@@ -16,16 +16,16 @@ export function App() {
       github: 'https://github.com/peteknowsai',
       linkedin: 'https://www.linkedin.com/in/peteknowsai',
       substack: 'https://substack.com/@peteknowsai',
-      youtube: 'https://www.youtube.com/channel/UC7A7DmMPflHE0nzF4PGTe6A',
       email: 'pete@peteknowsai.xyz',
     }
   });
   
   // Links data - edit this directly in code
   const [links] = useState<Link[]>([
-    { id: '1', title: 'YouTube Channel', url: 'https://www.youtube.com/channel/UC7A7DmMPflHE0nzF4PGTe6A', active: true, color: 'bg-red-400 hover:bg-red-500' },
+    { id: '1', title: 'GitHub', url: 'https://github.com/peteknowsai', active: true, color: 'bg-gray-400 hover:bg-gray-500' },
     { id: '2', title: 'Newsletter', url: 'https://substack.com/@peteknowsai', active: true, color: 'bg-blue-400 hover:bg-blue-500' },
-    { id: '3', title: 'home0', url: 'https://www.home0.xyz', active: true, color: 'bg-green-400 hover:bg-green-500' },
+    { id: '3', title: 'Home0', url: 'https://www.home0.xyz', active: true, color: 'bg-green-400 hover:bg-green-500' },
+    { id: '4', title: 'Download Resume', url: '/resume.pdf', active: true, color: 'bg-yellow-400 hover:bg-yellow-500', isDownload: true },
   ]);
 
   return (

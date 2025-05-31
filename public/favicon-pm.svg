@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Shadow -->
+  <rect x="3" y="3" width="28" height="28" rx="4" fill="#000" opacity="0.3"/>
+  
+  <!-- Main background -->
+  <rect x="1" y="1" width="28" height="28" rx="4" fill="#ffde59" stroke="#000" stroke-width="2"/>
+  
+  <!-- PM text -->
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000">PM</text>
+</svg>

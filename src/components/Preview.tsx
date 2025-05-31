@@ -1,6 +1,6 @@
 import React from 'react';
 import { Profile, Link } from '../types';
-import { ExternalLink, Github, Linkedin, Mail } from 'lucide-react';
+import { ExternalLink, Github, Linkedin, Mail, Download } from 'lucide-react';
 
 // X logo (formerly Twitter) - more accurate representation
 const XIcon = () => (
@@ -45,13 +45,13 @@ const Preview: React.FC<PreviewProps> = ({ profile, links }) => {
     <div className="bg-[#e0e8e4] rounded-lg overflow-hidden max-w-md mx-auto p-6 pb-12">
       <div className="flex flex-col items-center text-center mb-8">
         {/* Profile Image */}
-        <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden relative" 
+        <div className="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden relative" 
              style={{ border: '3px solid black', boxShadow: 'rgb(0, 0, 0) 5px 5px 0px 0px' }}>
           <img 
             src={profile.avatar} 
             alt={`${profile.name}'s profile`} 
             className="w-full h-full object-cover"
-            style={{ objectPosition: '50% 20%' }}
+            style={{ objectPosition: '48% 15%' }}
           />
         </div>
         
@@ -74,14 +74,22 @@ const Preview: React.FC<PreviewProps> = ({ profile, links }) => {
           <a
             key={link.id}
             href={link.url}
-            target="_blank"
+            target={link.isDownload ? "_self" : "_blank"}
             rel="noopener noreferrer"
-            className={`relative group w-full p-4 mb-4 ${link.color} transform transition-all duration-200 hover:-translate-y-1 hover:rotate-1 block`}
-            style={{ border: '3px solid black', boxShadow: 'rgb(0, 0, 0) 5px 5px 0px 0px' }}
+            download={link.isDownload ? "Pete_McCarthy_Resume.pdf" : undefined}
+            className={`relative group w-full p-4 mb-4 ${link.color} transform transition-all duration-200 hover:-translate-y-1 hover:rotate-1 block ${
+              link.isDownload ? 'animate-pulse-subtle' : ''
+            }`}
+            style={{ 
+              border: '3px solid black', 
+              boxShadow: link.isDownload 
+                ? 'rgb(0, 0, 0) 5px 5px 0px 0px' 
+                : 'rgb(0, 0, 0) 5px 5px 0px 0px' 
+            }}
           >
             <div className="flex justify-between items-center">
               <span className="font-bold text-lg">{link.title}</span>
-              <ExternalLink size={24} />
+              {link.isDownload ? <Download size={24} className="animate-bounce" /> : <ExternalLink size={24} />}
             </div>
           </a>
         ))}

@@ -20,4 +20,5 @@ export interface Link {
   url: string;
   active: boolean;
   color?: string;
+  isDownload?: boolean;
 }
