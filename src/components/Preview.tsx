@@ -1,6 +1,6 @@
 import React from 'react';
 import { Profile, Link } from '../types';
-import { ExternalLink, Github, Linkedin, Mail, Download, Calendar } from 'lucide-react';
+import { ExternalLink, Github, Linkedin, Mail, Download, Calendar, DollarSign } from 'lucide-react';
 
 // X logo (formerly Twitter) - more accurate representation
 const XIcon = () => (
@@ -91,7 +91,14 @@ const Preview: React.FC<PreviewProps> = ({ profile, links }) => {
                 }}
               >
                 <div className="flex flex-col items-center">
-                  <Calendar size={24} className="mb-2" />
+                  {link.isAIConsult ? (
+                    <div className="flex mb-2">
+                      <DollarSign size={24} />
+                      <DollarSign size={24} style={{ marginLeft: '-8px' }} />
+                    </div>
+                  ) : (
+                    <Calendar size={24} className="mb-2" />
+                  )}
                   <span className="font-bold text-sm text-center">{link.title}</span>
                 </div>
               </a>

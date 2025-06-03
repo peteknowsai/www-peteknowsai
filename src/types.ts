@@ -23,4 +23,5 @@ export interface Link {
   isDownload?: boolean;
   isCalBooking?: boolean;
   calLink?: string;
+  isAIConsult?: boolean;
 }
