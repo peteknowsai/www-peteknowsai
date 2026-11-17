@@ -1,53 +1,45 @@
 # Pete Knows AI
 
-## Pete McCarthy
-### AI Product Leader
+The source of [www.peteknowsai.xyz](https://www.peteknowsai.xyz), the personal site of Pete McCarthy.
 
----
+It is one page, written as a letter: who he is, the four AI products he has live, the clients he builds for, twenty years of history as a short list, and how to reach him.
 
-### Connect With Me
+## How it is built
 
-- [Twitter](https://twitter.com/peteknowsai)
-- [LinkedIn](https://www.linkedin.com/in/peteknowsai)
-- [GitHub](https://github.com/peteknowsai)
-- [Substack Newsletter](https://substack.com/@peteknowsai)
-- [home0](https://www.home0.xyz)
+- `index.html` is the whole page. `src/site.css` is all of its styles.
+- The words on the page are the storyboard's, and a test compares the two. To change the copy, change `specs/designs/2026-11-17-site-redo.html` first.
+- Vite builds it into `dist/`. There is no framework and no JavaScript on the page.
+- Fonts are Roboto Slab and Archivo, served from the site itself. Nothing loads from another host, and there is no tracking.
+- Pictures live in `public/images/`: the painted portrait and each product's own character.
 
----
-
-## About This Repository
-
-This repository contains the source code for [peteknowsai.xyz](https://peteknowsai.xyz), a link tree website that serves as a central hub for connecting to my various social media profiles and important links.
-
-### Features
-
-- Responsive design that works on mobile, tablet, and desktop
-- Clean, modern UI with custom branding
-- Optimized social sharing with proper Open Graph and Twitter Card metadata
-- Custom favicons and touch icons for various platforms
-- WhatsApp-optimized sharing with dedicated metadata
-
-### Tech Stack
-
-- React + TypeScript
-- Tailwind CSS for styling
-- Vite for fast development and building
-
-### Development
-
-To run the development server:
+## Run it
 
 ```bash
 npm install
 npm run dev
 ```
 
-### Building for Production
-
-To build the site for production:
+## Check it
 
 ```bash
-npm run build
+npm run check
 ```
 
-The built files will be in the `dist` directory, ready to be deployed.
+This builds the site and runs the tests in `test/` against `dist/`. It needs `pdftotext`, which comes with poppler (`brew install poppler`). They check the links, that the only booking link is the free 30-minute call, that nothing loads from another host, the link preview tags and the icons.
+
+## Put it live
+
+```bash
+npm run deploy
+```
+
+This runs the checks, then uploads `dist/` to the Cloudflare Pages project `peteknowsai` with `wrangler`. A push to main deploys nothing on its own.
+
+## Files that are made, not written
+
+- `public/og.png`, the link preview picture, is rendered from `scripts/og.html`. The command is in the comment at the top of that file, and it needs the dev server running.
+- `public/resume.pdf` is printed from a resume source kept outside this repo, with the phone number removed.
+
+## Design
+
+The design of record is `specs/designs/2026-11-17-site-redo.html`, a storyboard of every screen. `DESIGN.md` holds the colors, type and rules the page follows, and `PRODUCT.md` says who the site is for.

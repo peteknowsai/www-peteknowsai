@@ -2,9 +2,9 @@
 
 <!-- impeccable:product-schema 1 -->
 
-Written 2026-11-17 from what Pete said while redoing his resume and LinkedIn profile. He was not
-interviewed for this file; lines marked (inferred) are my reading and his storyboard answers
-correct them.
+Written 2026-11-17 from what Pete said while redoing his resume and LinkedIn profile, then
+corrected by the storyboard he locked the same day. He was not interviewed for this file; lines
+marked (inferred) are still a reading, not his words.
 
 ## Platform
 
@@ -36,15 +36,16 @@ shop, with coding agents doing most of the typing.
 - Visitors arrive from his LinkedIn profile, whose About ends by pointing here, from his resume,
   and from the website field of job applications.
 - The site, the LinkedIn profile and the resume tell one story. They must not disagree on a fact.
-- He lives in Paonia, Colorado and works remote. He wants a full-time role.
+- He works remote and wants a full-time role. The page names no town and does not say remote
+  (Pete, 2026-11-17).
 
 ## Capabilities and Constraints
 
 - One static site. No backend, no forms, no analytics.
-- Hosted on Cloudflare Pages and deployed by hand with wrangler. A push to main deploys nothing.
-- Only the www address resolves today. The bare domain has no web record.
-- Undecided until Pete answers the storyboard: whether paid consult bookings stay, which portrait
-  the site uses, and whether the public resume shows his phone number.
+- Hosted on Cloudflare Pages and uploaded with `npm run deploy`. A push to main deploys nothing.
+- Both www.peteknowsai.xyz and peteknowsai.xyz serve the site. www is the canonical address.
+- Decided by Pete on 2026-11-17: the only booking is the free 30-minute call, the portrait is the
+  painted one, and the web copy of the resume has no phone number.
 
 ## Brand Commitments
 
@@ -58,7 +59,7 @@ shop, with coding agents doing most of the typing.
   Yeoman (yeoman.md).
 - Client work: CommonLight, Port32, Peggy.
 - Career facts and numbers come from his resume, which lives outside this repo.
-- Portraits: `public/images/profile-v2.jpg`, a painted-style picture, and his LinkedIn photo.
+- Portrait: `public/images/portrait.jpg`, the painted picture. His LinkedIn photo is not used here.
 - There are no testimonials, press mentions, customer logos or usage numbers for the 2025
   products. Never invent them.
 
@@ -67,7 +68,8 @@ shop, with coding agents doing most of the typing.
 1. Show the working thing. Every claim links to something live.
 2. One minute. A visitor learns who he is, what he built and how to reach him without hunting.
 3. One story. The site, LinkedIn and the resume agree on every fact.
-4. A job, not gigs. Nothing on the page sells hourly work. (inferred, pending Pete's answer)
+4. A job, not gigs. Nothing on the page sells hourly work. (Pete, 2026-11-17: the paid consults
+   came off)
 
 ## Accessibility & Inclusion
 
