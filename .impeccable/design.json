@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-17T00:00:00Z",
+  "title": "Design System: Pete Knows AI",
+  "extensions": {
+    "colorMeta": {
+      "page": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "oklch(0.975 0.008 95)",
+        "hex": "#f8f7f1",
+        "cssVar": "--page",
+        "tonalRamp": ["oklch(0.15 0.008 95)", "oklch(0.27 0.008 95)", "oklch(0.39 0.008 95)", "oklch(0.51 0.008 95)", "oklch(0.63 0.008 95)", "oklch(0.75 0.008 95)", "oklch(0.87 0.008 95)", "oklch(0.975 0.008 95)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Warm Ink",
+        "canonical": "oklch(0.2 0.01 95)",
+        "hex": "#171611",
+        "cssVar": "--ink",
+        "tonalRamp": ["oklch(0.15 0.01 95)", "oklch(0.2 0.01 95)", "oklch(0.34 0.01 95)", "oklch(0.47 0.01 95)", "oklch(0.6 0.01 95)", "oklch(0.72 0.01 95)", "oklch(0.84 0.01 95)", "oklch(0.95 0.01 95)"]
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "oklch(0.2 0.01 95 / .75)",
+        "hex": "#504e49",
+        "hexNote": "as composited on the page color",
+        "cssVar": "--soft",
+        "tonalRamp": ["oklch(0.15 0.01 95)", "oklch(0.26 0.01 95)", "oklch(0.37 0.01 95)", "oklch(0.49 0.01 95)", "oklch(0.61 0.01 95)", "oklch(0.72 0.01 95)", "oklch(0.84 0.01 95)", "oklch(0.95 0.01 95)"]
+      },
+      "quiet": {
+        "role": "neutral",
+        "displayName": "Quiet Ink",
+        "canonical": "oklch(0.2 0.01 95 / .62)",
+        "hex": "#6d6b66",
+        "hexNote": "as composited on the page color",
+        "cssVar": "--quiet",
+        "tonalRamp": ["oklch(0.15 0.01 95)", "oklch(0.26 0.01 95)", "oklch(0.37 0.01 95)", "oklch(0.49 0.01 95)", "oklch(0.61 0.01 95)", "oklch(0.72 0.01 95)", "oklch(0.84 0.01 95)", "oklch(0.95 0.01 95)"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(0.2 0.01 95 / .14)",
+        "hex": "#d9d7d2",
+        "hexNote": "as composited on the page color",
+        "cssVar": "--rule",
+        "tonalRamp": ["oklch(0.15 0.01 95)", "oklch(0.26 0.01 95)", "oklch(0.37 0.01 95)", "oklch(0.49 0.01 95)", "oklch(0.61 0.01 95)", "oklch(0.72 0.01 95)", "oklch(0.84 0.01 95)", "oklch(0.95 0.01 95)"]
+      },
+      "mark": {
+        "role": "primary",
+        "displayName": "Highlighter Green",
+        "canonical": "oklch(0.92 0.07 150)",
+        "hex": "#c4f2cc",
+        "cssVar": "--mark",
+        "tonalRamp": ["oklch(0.15 0.07 150)", "oklch(0.26 0.07 150)", "oklch(0.37 0.07 150)", "oklch(0.48 0.07 150)", "oklch(0.59 0.07 150)", "oklch(0.7 0.07 150)", "oklch(0.81 0.07 150)", "oklch(0.92 0.07 150)"]
+      },
+      "ink-hover": {
+        "role": "neutral",
+        "displayName": "Lifted Ink",
+        "canonical": "oklch(0.34 0.01 95)",
+        "hex": "#393832",
+        "cssVar": null,
+        "tonalRamp": ["oklch(0.15 0.01 95)", "oklch(0.2 0.01 95)", "oklch(0.34 0.01 95)", "oklch(0.47 0.01 95)", "oklch(0.6 0.01 95)", "oklch(0.72 0.01 95)", "oklch(0.84 0.01 95)", "oklch(0.95 0.01 95)"]
+      },
+      "on-ink": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#fff",
+        "hex": "#ffffff",
+        "cssVar": null,
+        "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.27 0 0)", "oklch(0.39 0 0)", "oklch(0.51 0 0)", "oklch(0.63 0 0)", "oklch(0.75 0 0)", "oklch(0.87 0 0)", "oklch(1 0 0)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The one headline. 88px from a viewport of about 1276px up; line-height 1.1 at 640px and below.", "cssVar": "--slab" },
+      "body": { "displayName": "Body", "purpose": "Every paragraph of the letter and the greeting (greeting line-height 1.3). 18.5px at 640px and below. text-wrap: pretty.", "cssVar": "--slab" },
+      "signature": { "displayName": "Signature", "purpose": "The name that signs the letter, once. 38px at 640px and below.", "cssVar": "--slab" },
+      "title": { "displayName": "Title", "purpose": "A product name. 19px at 640px and below.", "cssVar": "--slab" },
+      "caption": { "displayName": "Caption", "purpose": "The line under a product name, Soft Ink, text-wrap: balance. 14px at 640px and below.", "cssVar": "--sans" },
+      "list": { "displayName": "List", "purpose": "A history row; company name at weight 700. 15px at 640px and below.", "cssVar": "--sans" },
+      "label": { "displayName": "Label", "purpose": "Bar links. Site name is 700 at 16px; button text is 600.", "cssVar": "--sans" },
+      "label-small": { "displayName": "Label small", "purpose": "The foot.", "cssVar": "--sans" }
+    },
+    "shadows": [
+      { "name": "mark-hang", "value": "4px 0 0 var(--mark), -4px 0 0 var(--mark)", "purpose": "Not depth. Extends the highlight 4px past its phrase on each side without moving the punctuation after it. Paired with box-decoration-break: clone." }
+    ],
+    "motion": [
+      { "name": "character-lift", "value": "transform .18s cubic-bezier(.16, 1, .3, 1)", "purpose": "A product character moves translateY(-3px) rotate(-3deg) on hover or focus. Only inside prefers-reduced-motion: no-preference. The only motion on the site." }
+    ],
+    "breakpoints": [
+      { "name": "narrow-gutter", "value": "1100px", "purpose": "max-width. Side padding 72px to 40px." },
+      { "name": "two-by-two", "value": "1000px", "purpose": "max-width. Products two by two; history title moves under the description." },
+      { "name": "phone", "value": "640px", "purpose": "max-width. 20px padding, 64px bar with the button only, portrait moves to the greeting, products stack, history titles visually hidden." }
+    ],
+    "focus": { "value": "outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 3px", "purpose": "Every focusable element." },
+    "widths": [
+      { "name": "page", "value": "1280px" },
+      { "name": "letter-column", "value": "790px" },
+      { "name": "history-list", "value": "1010px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Resume Button",
+      "kind": "button",
+      "refersTo": "button-resume",
+      "description": "The one filled control on the site. Links to the resume from the bar.",
+      "html": "<a class=\"ds-btn-resume\" href=\"#\">Resume</a>",
+      "css": ".ds-btn-resume { display: inline-block; background: var(--ink); color: #fff; padding: 9px 16px; border-radius: 6px; font: 600 15px/1.5 var(--sans); text-decoration: none; } .ds-btn-resume:hover { background: oklch(0.34 0.01 95); } .ds-btn-resume:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }"
+    },
+    {
+      "name": "The Bar",
+      "kind": "nav",
+      "refersTo": "bar",
+      "description": "Site name left, two underlined links and the button right. No background, no line under it.",
+      "html": "<header class=\"ds-bar\"><b>Pete Knows AI</b><nav aria-label=\"Contact\"><a href=\"#\">Email</a><a href=\"#\">Book a call</a><a class=\"ds-bar-k\" href=\"#\">Resume</a></nav></header>",
+      "css": ".ds-bar { display: flex; align-items: center; height: 76px; font: 400 15px/1.5 var(--sans); color: var(--ink); } .ds-bar b { font-weight: 700; font-size: 16px; margin-right: auto; } .ds-bar nav { display: flex; align-items: center; gap: 30px; } .ds-bar a { color: inherit; text-decoration: underline; text-underline-offset: 4px; } .ds-bar a:hover { text-decoration-thickness: 2.5px; } .ds-bar a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 3px; } .ds-bar .ds-bar-k { background: var(--ink); color: #fff; padding: 9px 16px; border-radius: 6px; font-weight: 600; text-decoration: none; } .ds-bar .ds-bar-k:hover { background: oklch(0.34 0.01 95); }"
+    },
+    {
+      "name": "Letter Paragraph with Highlight and Link",
+      "kind": "custom",
+      "refersTo": "letter-column",
+      "description": "The letter's voice: Roboto Slab Light at 23px, at most 790px wide, with the green highlight behind one phrase and an ink text link.",
+      "html": "<div class=\"ds-col\"><p>Since 2025 I've run a one-person shop that <mark class=\"ds-mark\">takes an idea to working software</mark>, with coding agents doing most of the typing. <a href=\"#\">Read my resume</a>.</p></div>",
+      "css": ".ds-col { max-width: 790px; color: var(--ink); } .ds-col p { font: 300 23px/1.5 var(--slab); margin: 0 0 22px; text-wrap: pretty; } .ds-col a { color: inherit; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; } .ds-col a:hover { text-decoration-thickness: 2.5px; } .ds-col a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 3px; } .ds-mark { background: var(--mark); color: inherit; border-radius: 3px; box-shadow: 4px 0 0 var(--mark), -4px 0 0 var(--mark); -webkit-box-decoration-break: clone; box-decoration-break: clone; }"
+    },
+    {
+      "name": "Headline",
+      "kind": "custom",
+      "refersTo": "portrait-inline",
+      "description": "The one heading. On the site a round painted portrait, 1.114em across, sits inline after the first line; this snippet stands a plain circle in its place.",
+      "html": "<h1 class=\"ds-h1\">I build AI agents <span class=\"ds-h1-portrait\" aria-hidden=\"true\"></span><br>and ship them myself.</h1>",
+      "css": ".ds-h1 { font: 300 clamp(44px, 6.9vw, 88px)/1.08 var(--slab); letter-spacing: -.02em; margin: 8px 0 0; color: var(--ink); } .ds-h1-portrait { display: inline-block; width: 1.114em; height: 1.114em; border-radius: 50%; background: var(--rule); vertical-align: -.205em; margin: 0 6px; }"
+    },
+    {
+      "name": "Product Link",
+      "kind": "custom",
+      "refersTo": "product-link",
+      "description": "A product's own character, its name and one caption line, all one link. The character lifts and tips on hover or focus. The real characters are the SVGs in public/images; this snippet stands a plain shape in their place.",
+      "html": "<a class=\"ds-crew\" href=\"#\"><svg class=\"ds-crew-img\" viewBox=\"0 0 84 84\" width=\"84\" height=\"84\" aria-hidden=\"true\"><rect x=\"14\" y=\"14\" width=\"56\" height=\"56\" rx=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></svg><b>Cells</b><span>An AI chief of staff for every employee.</span></a>",
+      "css": ".ds-crew { display: block; color: var(--ink); text-decoration: none; font-family: var(--sans); } .ds-crew-img { display: block; width: 84px; height: 84px; margin: 0 0 8px -6px; } .ds-crew b { display: block; font: 400 22px/1.25 var(--slab); } .ds-crew span { display: block; font-size: 15px; line-height: 1.4; color: var(--soft); margin-top: 3px; max-width: 15em; text-wrap: balance; } .ds-crew:hover b, .ds-crew:focus-visible b { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; } .ds-crew:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 3px; } @media (prefers-reduced-motion: no-preference) { .ds-crew-img { transition: transform .18s cubic-bezier(.16, 1, .3, 1); } .ds-crew:hover .ds-crew-img, .ds-crew:focus-visible .ds-crew-img { transform: translateY(-3px) rotate(-3deg); } }"
+    },
+    {
+      "name": "History Row",
+      "kind": "custom",
+      "refersTo": "history-row",
+      "description": "One job per row under a hairline: years, company, what happened, title. Not a link.",
+      "html": "<ul class=\"ds-hist\" role=\"list\"><li class=\"ds-r\"><span class=\"ds-yr\">2013 to 2014</span> <b>Checkwise</b> <span class=\"ds-what\">Bootstrapped a food safety platform to a 7-figure acquisition in under 2 years.</span> <span class=\"ds-ti\">CEO and Founder</span></li><li class=\"ds-r\"><span class=\"ds-yr\">2000 to 2003</span> <b>OpenTable</b> <span class=\"ds-what\">Early team, back when restaurants ran on paper reservation books.</span> <span class=\"ds-ti\">Sr. Implementation Specialist</span></li></ul>",
+      "css": ".ds-hist { list-style: none; padding: 0; margin: 2px 0 38px; max-width: 1010px; border-bottom: 1px solid var(--rule); font-family: var(--sans); color: var(--ink); } .ds-r { display: grid; grid-template-columns: 7.2em 6.6em minmax(0, 1fr) auto; gap: 0 22px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15.5px; line-height: 1.45; } .ds-r b { font-weight: 700; } .ds-what { text-wrap: pretty; } .ds-yr, .ds-ti { color: var(--quiet); }"
+    },
+    {
+      "name": "The Foot",
+      "kind": "nav",
+      "refersTo": "foot",
+      "description": "A hairline, a row of small underlined links, and the copyright line pushed right.",
+      "html": "<footer class=\"ds-foot\"><a href=\"#\">LinkedIn</a><a href=\"#\">GitHub</a><a href=\"#\">X</a><span>© 2026 Pete McCarthy</span></footer>",
+      "css": ".ds-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 26px; border-top: 1px solid var(--rule); padding: 22px 0 26px; font: 400 14px/1.5 var(--sans); color: var(--ink); } .ds-foot a { color: inherit; text-decoration: underline; text-underline-offset: 4px; } .ds-foot a:hover { text-decoration-thickness: 2.5px; } .ds-foot a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 3px; } .ds-foot span { margin-left: auto; color: var(--quiet); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Signed Letter",
+    "overview": "The whole site is one letter from one person. It opens with a greeting, makes its claim in a single large headline, keeps talking in plain paragraphs, and ends with a signature. Nothing on the page is a section: there is one heading, no subheadings, no cards, no boxes and no panels. When the letter needs to show something, it stops for a moment, shows it as a plain row or a plain list, and picks the sentence back up.\n\nThe look is the one Pete's four live products share: a pale warm page, near-black warm ink, Roboto Slab Light for what the letter says, Archivo for the small working text around it, and one soft green that behaves like a highlighter pen. The page is quiet and airy on a laptop, with a wide left-aligned column and generous room to the right. Nothing is centered.\n\nThe page is still. The only thing that moves is a product character when the visitor points at it or tabs to it, and under reduced motion it does not move either.",
+    "keyCharacteristics": [
+      "One left-aligned letter column (790px) inside a wide page (1280px), never centered text.",
+      "One heading on the whole page. Sentences in the letter introduce what follows.",
+      "Two typefaces with fixed jobs: the slab speaks, the sans labels.",
+      "One accent, used as a highlighter behind a phrase.",
+      "One filled button. Every other action is an underlined link.",
+      "Lines are 1px hairlines at 14 percent ink. There are no boxes.",
+      "The only pictures are the painted portrait, round, and each product's own character."
+    ],
+    "rules": [
+      { "name": "The Highlighter Rule", "body": "The green goes behind a phrase of running text, the way a pen would, and behind selected text. It is never a button fill, a border, a link color, an icon color or a background for a block. Two phrases on a page is the observed dose.", "section": "colors" },
+      { "name": "The One Ink Rule", "body": "There is one text hue. Emphasis comes from weight or from the three transparencies, never from a second color. Links are ink with an underline, not a link color.", "section": "colors" },
+      { "name": "The Two Voices Rule", "body": "Roboto Slab is for what the letter says and for the names of the things it shows. Archivo is for the bar, the history list, captions and the foot. Slab never sets a list row or a caption; Archivo never sets a paragraph of the letter.", "section": "typography" },
+      { "name": "The Light Slab Rule", "body": "The slab is weight 300 everywhere except product names, which are 400. There is no bold slab. Bold (700) belongs to Archivo, for the site name and company names.", "section": "typography" },
+      { "name": "The One Heading Rule", "body": "The page has one `h1` and no other heading at any level. A new part of the page is announced by a sentence in the letter, ending in a period or a colon, not by a heading or a label above it.", "section": "typography" },
+      { "name": "The Flat Page Rule", "body": "No shadows for depth, no raised surfaces, no layered backgrounds. If something needs to stand apart, give it space or a hairline.", "section": "elevation" },
+      { "name": "The Open Line Rule", "body": "A line separates rows or closes the page. It never surrounds anything. No element has a border on more than one side.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do write a new part of the page as more of the letter: a sentence that leads in, then the thing itself, at the same left edge.",
+      "Do keep paragraphs at 790px or less and in Roboto Slab 300 at 23px (18.5px on a phone).",
+      "Do use the green only behind a phrase of running text, with the 4px hang and `box-decoration-break: clone`.",
+      "Do make every action after the resume button an ink text link with a 4px underline offset that thickens to 2.5px on hover.",
+      "Do separate rows with a 1px `rule` hairline and blocks with space.",
+      "Do keep the 2px ink focus outline at a 3px offset on everything focusable.",
+      "Do wrap any new movement in `prefers-reduced-motion: no-preference`, and trigger it only from hover or focus.",
+      "Do load fonts and pictures from this site only."
+    ],
+    "donts": [
+      "Don't add a second heading, a section label or a small caption above a block. The page has one `h1`.",
+      "Don't put content in a card, a box, a panel or a tinted band.",
+      "Don't add a second filled button or an outlined one.",
+      "Don't use the green as a fill, border, link color or icon color.",
+      "Don't add a shadow for depth, a gradient or a second background color.",
+      "Don't set text lighter than Quiet Ink (ink at 62 percent).",
+      "Don't center text or a column.",
+      "Don't animate anything on load or on scroll.",
+      "Don't add a picture that is not the painted portrait or a product's own character."
+    ]
+  }
+}
