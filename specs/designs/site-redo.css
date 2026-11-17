@@ -1,0 +1,170 @@
+/* Storyboard styles for the site redo. Row A and C: the fruit crate label look.
+   .park and .sleeve at the foot are the two other looks, first screen only. */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Yellowtail&display=swap');
+
+:root{
+  --field: oklch(0.37 0.16 264);
+  --field-deep: oklch(0.27 0.12 266);
+  --sun: oklch(0.87 0.17 92);
+  --red: oklch(0.57 0.21 31);
+  --red-deep: oklch(0.44 0.17 30);
+  --leaf: oklch(0.47 0.12 152);
+  --peach: oklch(0.78 0.14 62);
+  --ink: oklch(0.19 0.04 266);
+  --paper: oklch(0.985 0.005 264);
+  --rule: oklch(0.37 0.16 264 / .22);
+  --wide: "Archivo", "Arial Black", sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font:400 17px/1.5 "Archivo", system-ui, sans-serif;color:var(--ink);background:var(--field);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.caps{font-stretch:112%;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:13px}
+
+/* ---------- the label: first screen ---------- */
+.label{position:relative;min-height:800px;padding:26px 30px 0;background:var(--field);color:var(--paper);overflow:hidden;display:flex;flex-direction:column}
+.label::before{content:"";position:absolute;inset:12px;border:3px solid var(--sun);outline:2px solid var(--ink);outline-offset:3px;pointer-events:none;z-index:3}
+.top{position:relative;z-index:4;display:flex;align-items:center;gap:28px;padding:10px 22px 0}
+.top .who{font-stretch:112%;font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:14px;text-decoration:none;margin-right:auto}
+.top nav{display:flex;gap:26px}
+.top nav a{text-decoration:none;font-weight:600;font-size:15px}
+.top nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.tab{display:inline-block;background:var(--sun);color:var(--ink);font-weight:800;font-size:14px;letter-spacing:.04em;text-transform:uppercase;padding:8px 16px;border-radius:3px;text-decoration:none;border:2px solid var(--ink)}
+
+.face{position:relative;z-index:2;flex:1;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:8px;align-items:center;padding:0 34px 0 30px}
+.arch{display:block;width:100%;height:auto;margin:-10px 0 -30px -8px;overflow:visible}
+.arch text{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:92px;letter-spacing:.01em}
+.arch .shade{fill:var(--red);stroke:var(--ink);stroke-width:9px;stroke-linejoin:round;paint-order:stroke}
+.arch .fill{fill:var(--sun);stroke:var(--ink);stroke-width:3px;stroke-linejoin:round;paint-order:stroke}
+.brandword{font-family:"Yellowtail",cursive;font-size:44px;line-height:1;color:var(--paper);margin:0 0 14px 372px;transform:rotate(-5deg);transform-origin:left}
+.ribbon{display:inline-block;margin:0;background:var(--red);color:var(--paper);font-stretch:108%;font-weight:800;font-size:30px;line-height:1.15;padding:13px 40px 14px 26px;border:2px solid var(--ink);
+  clip-path:polygon(0 0,100% 0,calc(100% - 18px) 50%,100% 100%,0 100%)}
+.lede{max-width:35em;margin:20px 0 0;font-size:19px;line-height:1.5}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 0}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;text-decoration:none;padding:12px 20px;border-radius:3px;border:2px solid var(--paper);color:var(--paper)}
+.btn.pri{background:var(--sun);border-color:var(--ink);color:var(--ink)}
+.btn:hover{background:var(--paper);color:var(--ink)}
+.btn.pri:hover{background:var(--paper)}
+
+.vig{position:relative;justify-self:center;width:372px;height:372px;margin-top:6px}
+.vig::before{content:"";position:absolute;inset:-34px;border-radius:50%;background:var(--peach);border:2px solid var(--ink)}
+.vig img{position:relative;width:100%;height:100%;object-fit:cover;object-position:50% 16%;border-radius:50%;border:7px solid var(--sun);outline:2px solid var(--ink)}
+.seal{position:absolute;z-index:2;display:grid;place-content:center;text-align:center;width:104px;height:104px;border-radius:50%;background:var(--red);color:var(--paper);border:2px solid var(--ink);outline:2px dashed var(--sun);outline-offset:-9px;text-decoration:none;line-height:1.05}
+.seal b{display:block;font-stretch:118%;font-weight:900;font-size:34px;color:var(--sun)}
+.seal span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.seal:hover{background:var(--red-deep)}
+.seal.s1{left:-58px;top:-22px}
+.seal.s2{right:-50px;top:150px;background:var(--leaf)}
+.seal.s3{left:-30px;bottom:-34px;background:var(--field-deep)}
+
+.packer{position:relative;z-index:2;margin:28px -30px 0;padding:15px 64px 27px;background:var(--field-deep);border-top:3px solid var(--sun);display:flex;gap:34px;align-items:baseline;font-size:14px}
+.packer b{font-stretch:118%;font-weight:900;font-size:17px;letter-spacing:.06em;text-transform:uppercase;color:var(--sun)}
+.packer .net{margin-left:auto}
+
+/* ---------- products: four labels ---------- */
+.sec{padding:76px 64px 84px}
+.sec h2{font-stretch:118%;font-weight:900;font-size:40px;line-height:1.08;letter-spacing:-.005em;margin:0 0 12px;max-width:17em}
+.sec .sub{font-size:19px;max-width:34em;margin:0 0 40px}
+.products{background:var(--paper)}
+.crates{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px}
+.crate{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 232px;gap:22px;align-items:center;min-height:296px;padding:30px 30px 74px 32px;color:var(--paper);text-decoration:none;border:2px solid var(--ink);border-radius:4px;transition:opacity .18s ease-out, transform .18s ease-out}
+.crate::after{content:"";position:absolute;inset:7px 7px 51px 7px;border:2px solid currentColor;opacity:.55;pointer-events:none;border-radius:2px}
+.crates:has(.crate:hover) .crate:not(:hover){opacity:.55}
+.crate:hover{transform:translateY(-3px)}
+.crate h3{font-stretch:112%;font-weight:900;font-size:30px;line-height:1;text-transform:uppercase;margin:0 0 12px;color:var(--sun);text-shadow:2px 2px 0 var(--ink)}
+.crate p{margin:0;font-size:17px;line-height:1.45}
+.crate .shot{position:relative;aspect-ratio:5/4;border-radius:4px;overflow:hidden;border:4px solid var(--sun);outline:2px solid var(--ink);background:var(--paper)}
+.crate .shot img{width:100%;height:100%;object-fit:cover;object-position:0 0}
+.crate .go{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:10px 30px 11px;background:var(--ink);color:var(--paper);font-size:14px;font-weight:700;border-radius:0 0 2px 2px}
+.crate .go span:last-child{color:var(--sun);font-stretch:112%;text-transform:uppercase;letter-spacing:.08em;font-size:13px}
+.c-cells{background:var(--leaf)}
+.c-home{background:var(--red)}
+.c-towns{background:var(--field)}
+.c-yeoman{background:var(--sun);color:var(--ink)}
+.c-yeoman h3{color:var(--red);text-shadow:2px 2px 0 var(--ink)}
+.c-yeoman .shot{border-color:var(--red)}
+
+/* ---------- packing record: client work and history ---------- */
+.record{background:var(--paper);padding-top:0}
+.record .cols{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;border-top:3px solid var(--field);padding-top:44px}
+.record h2{font-size:28px;margin-bottom:18px}
+.slip{width:100%;border-collapse:collapse;font-size:16px}
+.slip th,.slip td{text-align:left;vertical-align:top;padding:12px 14px 12px 0;border-top:1px solid var(--rule)}
+.slip tr:first-child th,.slip tr:first-child td{border-top:2px solid var(--field)}
+.slip th{white-space:nowrap;font-stretch:112%;font-weight:800;color:var(--field)}
+.slip td.yr{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600;width:6.4em}
+.slip td small{display:block;font-size:14px;opacity:.72}
+.slip a{text-underline-offset:3px}
+
+/* ---------- contact ---------- */
+.contact{background:var(--red);color:var(--paper);display:grid;grid-template-columns:minmax(0,8fr) minmax(0,5fr);gap:48px;align-items:end}
+.contact h2{font-size:42px;color:var(--paper);max-width:none}
+.contact p{margin:0;font-size:19px;max-width:30em}
+.contact .acts{margin:0 0 14px}
+.contact .btn.pri{font-size:18px;padding:14px 24px}
+.contact .links{display:flex;gap:22px;font-weight:700;font-size:15px}
+.contact .paid{margin-top:18px;padding-top:14px;border-top:1px solid oklch(0.985 0.005 264 / .5);font-size:15px}
+.foot{background:var(--ink);color:var(--paper);padding:18px 64px;display:flex;justify-content:space-between;font-size:14px}
+
+/* ---------- phone ---------- */
+body.phone .label{min-height:844px;padding:18px 16px 0}
+body.phone .label::before{inset:7px}
+body.phone .top{padding:8px 10px 0;gap:12px}
+body.phone .top nav{display:none}
+body.phone .face{grid-template-columns:1fr;padding:0 10px;gap:0;align-content:start}
+body.phone .arch{margin:8px 0 -18px}
+body.phone .brandword{font-size:28px;margin:0 0 8px 150px}
+body.phone .ribbon{font-size:21px;padding:10px 26px 11px 14px}
+body.phone .lede{font-size:16px;margin-top:14px}
+body.phone .acts{margin-top:16px;gap:8px}
+body.phone .btn{font-size:15px;padding:10px 14px}
+body.phone .vig{width:170px;height:170px;margin:26px auto 0;order:3}
+body.phone .vig::before{inset:-16px}
+body.phone .vig img{border-width:5px}
+body.phone .seal{width:74px;height:74px;outline-offset:-7px}
+body.phone .seal b{font-size:23px}
+body.phone .seal span{font-size:8.5px}
+body.phone .seal.s1{left:-92px;top:6px}
+body.phone .seal.s2{right:-92px;top:6px}
+body.phone .seal.s3{left:-92px;bottom:-4px}
+body.phone .packer{margin:22px -16px 0;padding:11px 24px 20px;flex-wrap:wrap;gap:4px 14px;font-size:12.5px}
+body.phone .packer .net{margin-left:0}
+body.phone .sec{padding:44px 20px 52px}
+body.phone .sec h2{font-size:27px}
+body.phone .sec .sub{font-size:16px;margin-bottom:24px}
+body.phone .crates{grid-template-columns:1fr;gap:16px}
+body.phone .crate{grid-template-columns:minmax(0,1fr) 104px;gap:12px;min-height:0;padding:20px 18px 62px 20px}
+body.phone .crate h3{font-size:19px;margin-bottom:8px}
+body.phone .crate p{font-size:14.5px}
+body.phone .crate .go{padding:8px 18px 9px}
+html:has(body.phone){overflow:hidden}
+
+/* ---------- B1: park brochure ---------- */
+.park{background:#fff;color:#111;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;min-height:800px}
+.park .band{background:#111;color:#fff;display:flex;justify-content:space-between;align-items:flex-end;padding:30px 44px 26px}
+.park .band h1{font-size:78px;line-height:.92;font-weight:700;letter-spacing:-.03em;margin:0}
+.park .band p{margin:0;text-align:right;font-size:17px;font-weight:700;line-height:1.3}
+.park .band p span{display:block;font-weight:400}
+.park .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:#fff;border-bottom:8px solid oklch(0.52 0.13 150)}
+.park .strip figure{margin:0;position:relative;height:300px;overflow:hidden;background:#f3f3f1}
+.park .strip img{width:100%;height:100%;object-fit:cover;object-position:left top}
+.park .strip figcaption{position:absolute;left:0;bottom:0;background:#111;color:#fff;font-weight:700;font-size:14px;padding:5px 12px}
+.park .grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px;padding:30px 44px}
+.park .grid h2{font-size:15px;font-weight:700;margin:0 0 8px;padding-top:8px;border-top:3px solid #111}
+.park .grid p{margin:0 0 10px;font-size:15px;line-height:1.42}
+.park .grid .big{font-size:33px;line-height:1.08;font-weight:700;letter-spacing:-.02em;margin:0 0 14px;border:0;padding:0}
+.park .grid b{font-weight:700}
+
+/* ---------- B2: record sleeve with a paper band ---------- */
+.sleeve{position:relative;min-height:800px;background:oklch(0.955 0.004 250);color:var(--ink);overflow:hidden}
+.sleeve .mark{position:absolute;left:96px;top:118px;width:230px;height:230px;border-radius:50%;background:var(--sun)}
+.sleeve .name{position:absolute;left:96px;top:44px;font-stretch:112%;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:14px}
+.sleeve .say{position:absolute;left:388px;top:176px;font-stretch:118%;font-weight:900;font-size:50px;line-height:1.04;max-width:12em;margin:0}
+.sleeve .obi{position:absolute;left:0;right:0;bottom:0;height:300px;background:var(--red);color:var(--paper);display:grid;grid-template-columns:1.1fr 1fr 1.5fr .9fr;gap:30px;padding:26px 44px 0;border-top:2px solid var(--ink)}
+.sleeve .obi h2{font-stretch:118%;font-weight:900;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px;color:var(--sun)}
+.sleeve .obi p{margin:0 0 7px;font-size:14px;line-height:1.34}
+.sleeve .obi b{font-weight:800}
+.sleeve .obi .n{font-variant-numeric:tabular-nums;opacity:.8;margin-right:6px}
+
+.c-towns h3{font-size:26px}
