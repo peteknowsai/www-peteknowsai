@@ -54,11 +54,12 @@ img { display: block; max-width: 100%; }
 h1 { font: 300 clamp(44px, 6.9vw, 88px)/1.08 var(--slab); letter-spacing: -.02em; margin: 8px 0 0; }
 h1 img { display: inline-block; width: 1.114em; height: 1.114em; border-radius: 50%; object-fit: cover; object-position: 50% 16%; vertical-align: -.205em; margin: 0 6px; }
 .col { max-width: 790px; }
-.col p { font: 300 23px/1.5 var(--slab); margin: 0 0 22px; }
+.col p { font: 300 23px/1.5 var(--slab); margin: 0 0 22px; text-wrap: pretty; }
 .col > p:first-child { margin-top: 30px; }
 .col p a { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
 .bar a:hover, .foot a:hover, .col p a:hover { text-decoration-thickness: 2.5px; }
-mark { background: var(--mark); color: inherit; padding: 0 4px; border-radius: 3px; }
+/* the green hangs 4px past the words without pushing the comma after them away */
+mark { background: var(--mark); color: inherit; border-radius: 3px; box-shadow: 4px 0 0 var(--mark), -4px 0 0 var(--mark); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .col .sign { font-size: 46px; line-height: 1; margin: 38px 0; }
 
 /* the four products */
@@ -67,7 +68,7 @@ mark { background: var(--mark); color: inherit; padding: 0 4px; border-radius: 3
 .crew a { display: block; }
 .crew img { width: 84px; height: 84px; margin: 0 0 8px -6px; }
 .crew b { display: block; font: 400 22px/1.25 var(--slab); }
-.crew span { display: block; font-size: 15px; line-height: 1.4; color: var(--soft); margin-top: 3px; max-width: 15em; }
+.crew span { display: block; font-size: 15px; line-height: 1.4; color: var(--soft); margin-top: 3px; max-width: 15em; text-wrap: balance; }
 .crew a:hover b, .crew a:focus-visible b { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
 @media (prefers-reduced-motion: no-preference) {
   .crew img { transition: transform .18s cubic-bezier(.16, 1, .3, 1); }
@@ -78,6 +79,7 @@ mark { background: var(--mark); color: inherit; padding: 0 4px; border-radius: 3
 .hist { margin: 2px 0 38px; max-width: 1010px; border-bottom: 1px solid var(--rule); }
 .r { display: grid; grid-template-columns: 7.2em 6.6em minmax(0, 1fr) auto; gap: 0 22px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15.5px; line-height: 1.45; }
 .r b { font-weight: 700; }
+.what { text-wrap: pretty; }
 .yr, .ti { color: var(--quiet); }
 
 /* the foot */
@@ -88,11 +90,11 @@ mark { background: var(--mark); color: inherit; padding: 0 4px; border-radius: 3
   .page { padding: 0 40px; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .crew { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* the title moves under what he did there */
   .r { grid-template-columns: 7.2em 6.6em minmax(0, 1fr); }
-  /* out of sight, still read aloud: "Career break" is a title */
-  .ti { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .ti { grid-column: 3; }
 }
 
 /* phone: frames P1 and P2 */
@@ -116,5 +118,7 @@ mark { background: var(--mark); color: inherit; padding: 0 4px; border-radius: 3
   .r b { grid-column: 1; grid-row: 1; }
   .yr { grid-column: 2; grid-row: 1; }
   .what { grid-column: 1 / 3; }
+  /* frame P2 shows no titles on a phone; they stay readable aloud, since "Career break" is one */
+  .ti { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .foot { column-gap: 20px; }
 }

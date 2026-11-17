@@ -38,7 +38,7 @@ This runs the checks, then uploads `dist/` to the Cloudflare Pages project `pete
 ## Files that are made, not written
 
 - `public/og.png`, the link preview picture, is rendered from `scripts/og.html`. The command is in the comment at the top of that file, and it needs the dev server running.
-- `public/resume.pdf` is printed from a resume source kept outside this repo, with the phone number removed.
+- `public/resume.pdf` is printed from a resume source kept outside this repo, with the phone number and the town removed.
 
 ## Design
 

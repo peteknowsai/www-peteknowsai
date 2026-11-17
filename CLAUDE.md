@@ -26,5 +26,5 @@ Docs home is `specs/`. The design of record is `specs/designs/2026-11-17-site-re
 - Nothing loads from another host. Fonts come from `node_modules/@fontsource-variable/*` at build time.
 - Nothing moves except on hover or focus, and nothing at all under reduced motion.
 - The words on the page are the storyboard's. A test compares them, so a copy change starts in the storyboard.
-- `public/resume.pdf` is printed from a source kept outside this repo, with the phone number removed. Never commit the source.
+- `public/resume.pdf` is printed from a source kept outside this repo, with the phone number and the town removed. Never commit the source.
 - There is no `404.html`, so the host serves the page itself for any unknown path. Old links land on the letter.

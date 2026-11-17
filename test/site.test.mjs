@@ -128,7 +128,7 @@ test('history has eight rows with the career break', () => {
   assert.match(hist[1], /Career break/)
 })
 
-test('the resume has no phone number', () => {
+test('the resume has no phone number and no town', () => {
   let words
   try {
     words = execFileSync('pdftotext', ['dist/resume.pdf', '-'], { encoding: 'utf8' })
@@ -136,5 +136,6 @@ test('the resume has no phone number', () => {
     assert.fail(e.code === 'ENOENT' ? 'pdftotext not found: install poppler' : String(e))
   }
   assert.doesNotMatch(words, /\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}/)
+  assert.doesNotMatch(words, /Paonia|Colorado/i)
   assert.match(words, /Cells/)
 })
