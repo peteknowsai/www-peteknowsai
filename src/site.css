@@ -1,0 +1,120 @@
+/* All of the site's styles. The values come from the locked storyboard frames in
+   specs/designs/2026-11-17-site-redo.html; change the design there first. */
+
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../node_modules/@fontsource-variable/roboto-slab/files/roboto-slab-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../node_modules/@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: light;
+  --page: oklch(0.975 0.008 95);
+  --ink: oklch(0.2 0.01 95);
+  --soft: oklch(0.2 0.01 95 / .75);
+  --quiet: oklch(0.2 0.01 95 / .62);
+  --rule: oklch(0.2 0.01 95 / .14);
+  --mark: oklch(0.92 0.07 150);
+  --slab: "Roboto Slab", Georgia, serif;
+  --sans: "Archivo", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; font: 400 17px/1.5 var(--sans); color: var(--ink); background: var(--page); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+::selection { background: var(--mark); color: var(--ink); }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 3px; }
+
+.page { max-width: 1280px; margin: 0 auto; padding: 0 72px; }
+
+/* the bar */
+.bar { display: flex; align-items: center; height: 76px; font-size: 15px; }
+.bar b { font-weight: 700; font-size: 16px; margin-right: auto; }
+.bar nav { display: flex; align-items: center; gap: 30px; }
+.bar a, .foot a { text-decoration: underline; text-underline-offset: 4px; }
+.bar .k { background: var(--ink); color: #fff; padding: 9px 16px; border-radius: 6px; font-weight: 600; text-decoration: none; }
+.bar .k:hover { background: oklch(0.34 0.01 95); }
+
+/* the letter */
+.hi { font: 300 23px/1.3 var(--slab); margin: 26px 0 0; }
+.hi img { display: none; }
+h1 { font: 300 clamp(44px, 6.9vw, 88px)/1.08 var(--slab); letter-spacing: -.02em; margin: 8px 0 0; }
+h1 img { display: inline-block; width: 1.114em; height: 1.114em; border-radius: 50%; object-fit: cover; object-position: 50% 16%; vertical-align: -.205em; margin: 0 6px; }
+.col { max-width: 790px; }
+.col p { font: 300 23px/1.5 var(--slab); margin: 0 0 22px; }
+.col > p:first-child { margin-top: 30px; }
+.col p a { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+.bar a:hover, .foot a:hover, .col p a:hover { text-decoration-thickness: 2.5px; }
+mark { background: var(--mark); color: inherit; padding: 0 4px; border-radius: 3px; }
+.col .sign { font-size: 46px; line-height: 1; margin: 38px 0; }
+
+/* the four products */
+.crew, .hist { list-style: none; padding: 0; }
+.crew { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; margin: 12px 0 48px; }
+.crew a { display: block; }
+.crew img { width: 84px; height: 84px; margin: 0 0 8px -6px; }
+.crew b { display: block; font: 400 22px/1.25 var(--slab); }
+.crew span { display: block; font-size: 15px; line-height: 1.4; color: var(--soft); margin-top: 3px; max-width: 15em; }
+.crew a:hover b, .crew a:focus-visible b { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+@media (prefers-reduced-motion: no-preference) {
+  .crew img { transition: transform .18s cubic-bezier(.16, 1, .3, 1); }
+  .crew a:hover img, .crew a:focus-visible img { transform: translateY(-3px) rotate(-3deg); }
+}
+
+/* twenty years, as a list */
+.hist { margin: 2px 0 38px; max-width: 1010px; border-bottom: 1px solid var(--rule); }
+.r { display: grid; grid-template-columns: 7.2em 6.6em minmax(0, 1fr) auto; gap: 0 22px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15.5px; line-height: 1.45; }
+.r b { font-weight: 700; }
+.yr, .ti { color: var(--quiet); }
+
+/* the foot */
+.foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 26px; border-top: 1px solid var(--rule); padding: 22px 0 26px; font-size: 14px; }
+.foot span { margin-left: auto; color: var(--quiet); }
+
+@media (max-width: 1100px) {
+  .page { padding: 0 40px; }
+}
+
+@media (max-width: 900px) {
+  .crew { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .r { grid-template-columns: 7.2em 6.6em minmax(0, 1fr); }
+  /* out of sight, still read aloud: "Career break" is a title */
+  .ti { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+/* phone: frames P1 and P2 */
+@media (max-width: 640px) {
+  .page { padding: 0 20px; }
+  .bar { height: 64px; }
+  .bar nav a:not(.k) { display: none; }
+  .hi { font-size: 18.5px; margin: 12px 0 18px; }
+  .hi img { display: inline-block; width: 46px; height: 46px; border-radius: 50%; object-fit: cover; object-position: 50% 16%; vertical-align: middle; margin-right: 12px; }
+  h1 { line-height: 1.1; }
+  h1 br, h1 img { display: none; }
+  .col p { font-size: 18.5px; margin-bottom: 18px; }
+  .col > p:first-child { margin-top: 22px; }
+  .col .sign { font-size: 38px; margin: 28px 0; }
+  .crew { grid-template-columns: minmax(0, 1fr); gap: 14px; margin: 4px 0 30px; }
+  .crew a { display: grid; grid-template-columns: 62px minmax(0, 1fr); column-gap: 14px; }
+  .crew img { width: 62px; height: 62px; margin: 0; grid-row: 1 / 3; align-self: center; }
+  .crew b { font-size: 19px; align-self: end; }
+  .crew span { font-size: 14px; align-self: start; max-width: none; }
+  .r { grid-template-columns: minmax(0, 1fr) auto; font-size: 15px; }
+  .r b { grid-column: 1; grid-row: 1; }
+  .yr { grid-column: 2; grid-row: 1; }
+  .what { grid-column: 1 / 3; }
+  .foot { column-gap: 20px; }
+}
