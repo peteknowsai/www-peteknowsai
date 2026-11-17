@@ -1,0 +1,264 @@
+/* Storyboard styles for the site redo, round 2: black, white and one accent.
+   Row A and D: the label layout with the color taken out. .park at the foot is the plainer look. */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;600&family=Roboto+Slab:wght@300;400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
+
+:root{
+  --field: oklch(0.16 0.008 264);
+  --field-deep: oklch(0.12 0.006 264);
+  --accent: oklch(0.77 0.15 58);
+  --ink: oklch(0.19 0.012 266);
+  --paper: oklch(0.985 0.003 264);
+  --dim: oklch(0.985 0.003 264 / .3);
+  --rule: oklch(0.19 0.012 266 / .2);
+  --wide: "Archivo", "Arial Black", sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font:400 17px/1.5 "Archivo", system-ui, sans-serif;color:var(--ink);background:var(--field);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+
+/* ---------- the label: first screen ---------- */
+.label{position:relative;min-height:800px;padding:26px 30px 0;background:var(--field);color:var(--paper);overflow:hidden;display:flex;flex-direction:column}
+.label::before{content:"";position:absolute;inset:12px;border:1px solid var(--dim);pointer-events:none;z-index:3}
+.top{position:relative;z-index:4;display:flex;align-items:center;gap:28px;padding:10px 22px 0}
+.top .who{font-stretch:112%;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:14px;text-decoration:none;margin-right:auto}
+.top nav{display:flex;gap:26px}
+.top nav a{text-decoration:none;font-weight:500;font-size:15px}
+.top nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.tab{display:inline-block;color:var(--paper);font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;padding:8px 16px;border-radius:3px;text-decoration:none;border:1px solid var(--paper)}
+
+.face{position:relative;z-index:2;flex:1;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:8px;align-items:center;padding:0 34px 0 30px}
+.arch{display:block;width:100%;height:auto;margin:-10px 0 -18px -8px;overflow:visible}
+.arch text{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:92px;letter-spacing:.01em;fill:var(--paper)}
+.line{margin:0;font-stretch:108%;font-weight:700;font-size:32px;line-height:1.15}
+.lede{max-width:35em;margin:18px 0 0;font-size:19px;line-height:1.5;opacity:.86}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 0}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;text-decoration:none;padding:12px 20px;border-radius:3px;border:1px solid var(--paper);color:var(--paper)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.btn:hover,.btn.pri:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+
+.vig{position:relative;justify-self:center;width:372px;height:372px;margin-top:6px}
+.vig img{position:relative;width:100%;height:100%;object-fit:cover;object-position:50% 16%;border-radius:50%;border:1px solid var(--paper)}
+.seal{position:absolute;z-index:2;display:grid;place-content:center;text-align:center;width:104px;height:104px;border-radius:50%;background:var(--field);color:var(--paper);border:1px solid var(--paper);text-decoration:none;line-height:1.05}
+.seal b{display:block;font-stretch:118%;font-weight:800;font-size:34px}
+.seal span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.seal:hover{background:var(--paper);color:var(--ink)}
+.seal.s1{left:-58px;top:-22px}
+.seal.s2{right:-50px;top:150px}
+.seal.s3{left:-30px;bottom:-34px}
+
+.packer{position:relative;z-index:2;margin:28px -30px 0;padding:15px 64px 27px;background:var(--field-deep);border-top:1px solid var(--dim);display:flex;gap:34px;align-items:baseline;font-size:14px}
+.packer b{font-stretch:118%;font-weight:800;font-size:17px;letter-spacing:.06em;text-transform:uppercase}
+.packer .net{margin-left:auto}
+
+/* ---------- products: four labels ---------- */
+.sec{padding:76px 64px 84px}
+.sec h2{font-stretch:112%;font-weight:800;font-size:40px;line-height:1.08;letter-spacing:-.005em;margin:0 0 12px;max-width:17em}
+.sec .sub{font-size:19px;max-width:34em;margin:0 0 40px}
+.products{background:var(--paper)}
+.crates{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px}
+.crate{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 232px;gap:22px;align-items:center;min-height:296px;padding:30px 30px 74px 32px;background:#fff;color:var(--ink);text-decoration:none;border:1px solid var(--rule);border-radius:4px;transition:opacity .18s ease-out, border-color .18s ease-out}
+.crates:has(.crate:hover) .crate:not(:hover){opacity:.55}
+.crate:hover{border-color:var(--ink)}
+.crate h3{font-stretch:112%;font-weight:800;font-size:30px;line-height:1;text-transform:uppercase;margin:0 0 12px}
+.crate p{margin:0;font-size:17px;line-height:1.45}
+.crate .shot{position:relative;aspect-ratio:5/4;border-radius:3px;overflow:hidden;border:1px solid var(--rule);background:var(--paper)}
+.crate .shot img{width:100%;height:100%;object-fit:cover;object-position:0 0}
+.crate .go{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:10px 30px 11px;border-top:1px solid var(--rule);font-size:14px;font-weight:600}
+.crate .go span:last-child{font-stretch:112%;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:13px}
+.c-towns h3{font-size:26px}
+
+/* ---------- packing record: client work and history ---------- */
+.record{background:var(--paper);padding-top:0}
+.record .cols{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;border-top:1px solid var(--ink);padding-top:44px}
+.record h2{font-size:28px;margin-bottom:18px}
+.slip{width:100%;border-collapse:collapse;font-size:16px}
+.slip th,.slip td{text-align:left;vertical-align:top;padding:12px 14px 12px 0;border-top:1px solid var(--rule)}
+.slip tr:first-child th,.slip tr:first-child td{border-top:1px solid var(--ink)}
+.slip th{white-space:nowrap;font-stretch:112%;font-weight:800}
+.slip td.yr{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600;width:6.4em}
+.slip td small{display:block;font-size:14px;opacity:.72}
+.slip a{text-underline-offset:3px}
+
+/* ---------- contact ---------- */
+.contact{background:var(--field);color:var(--paper);display:grid;grid-template-columns:minmax(0,8fr) minmax(0,5fr);gap:48px;align-items:end}
+.contact h2{font-size:42px;max-width:none}
+.contact p{margin:0;font-size:19px;max-width:30em;opacity:.86}
+.contact .acts{margin:0 0 14px}
+.contact .btn.pri{font-size:18px;padding:14px 24px}
+.contact .links{display:flex;gap:22px;font-weight:600;font-size:15px}
+.contact .paid{margin-top:18px;padding-top:14px;border-top:1px solid var(--dim);font-size:15px}
+.foot{background:var(--field-deep);color:var(--paper);padding:18px 64px;display:flex;justify-content:space-between;font-size:14px;border-top:1px solid var(--dim)}
+
+/* ---------- phone ---------- */
+body.phone .label{min-height:844px;padding:18px 16px 0}
+body.phone .label::before{inset:7px}
+body.phone .top{padding:8px 10px 0;gap:12px}
+body.phone .top nav{display:none}
+body.phone .face{grid-template-columns:1fr;padding:0 10px;gap:0;align-content:start}
+body.phone .arch{margin:8px 0 -6px}
+body.phone .line{font-size:22px}
+body.phone .lede{font-size:16px;margin-top:12px}
+body.phone .acts{margin-top:16px;gap:8px}
+body.phone .btn{font-size:15px;padding:10px 14px}
+body.phone .vig{width:170px;height:170px;margin:26px auto 0;order:3}
+body.phone .seal{width:74px;height:74px}
+body.phone .seal b{font-size:23px}
+body.phone .seal span{font-size:8.5px}
+body.phone .seal.s1{left:-92px;top:6px}
+body.phone .seal.s2{right:-92px;top:6px}
+body.phone .seal.s3{left:-92px;bottom:-4px}
+body.phone .packer{margin:22px -16px 0;padding:11px 24px 20px;flex-wrap:wrap;gap:4px 14px;font-size:12.5px}
+body.phone .packer .net{margin-left:0}
+body.phone .sec{padding:44px 20px 52px}
+body.phone .sec h2{font-size:27px}
+body.phone .sec .sub{font-size:16px;margin-bottom:24px}
+body.phone .crates{grid-template-columns:1fr;gap:16px}
+body.phone .crate{grid-template-columns:minmax(0,1fr) 104px;gap:12px;min-height:0;padding:20px 18px 62px 20px}
+body.phone .crate h3{font-size:19px;margin-bottom:8px}
+body.phone .crate p{font-size:14.5px}
+body.phone .crate .go{padding:8px 18px 9px}
+html:has(body.phone){overflow:hidden}
+
+/* ---------- B1: park brochure ---------- */
+.park{background:#fff;color:#111;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;min-height:800px}
+.park .band{background:#111;color:#fff;display:flex;justify-content:space-between;align-items:flex-end;padding:30px 44px 26px}
+.park .band h1{font-size:78px;line-height:.92;font-weight:700;letter-spacing:-.03em;margin:0}
+.park .band p{margin:0;text-align:right;font-size:17px;font-weight:700;line-height:1.3}
+.park .band p span{display:block;font-weight:400}
+.park .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:#fff;border-bottom:1px solid #111}
+.park .strip figure{margin:0;position:relative;height:300px;overflow:hidden;background:#f3f3f1}
+.park .strip img{width:100%;height:100%;object-fit:cover;object-position:left top}
+.park .strip figcaption{position:absolute;left:0;bottom:0;background:#111;color:#fff;font-weight:700;font-size:14px;padding:5px 12px}
+.park .grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px;padding:30px 44px}
+.park .grid h2{font-size:15px;font-weight:700;margin:0 0 8px;padding-top:8px;border-top:3px solid #111}
+.park .grid p{margin:0 0 10px;font-size:15px;line-height:1.42}
+.park .grid .big{font-size:33px;line-height:1.08;font-weight:700;letter-spacing:-.02em;margin:0 0 14px;border:0;padding:0}
+.park .grid b{font-weight:700}
+
+/* ================= round 3: four new directions, first screen only ================= */
+
+/* ---------- N1: family, the look the four products share ---------- */
+.fam{min-height:800px;background:oklch(0.975 0.008 95);color:oklch(0.2 0.01 95);padding:0 72px}
+.fam .bar{display:flex;align-items:center;gap:30px;height:76px;font-size:15px}
+.fam .bar b{font-weight:700;font-size:16px;margin-right:auto}
+.fam a{text-decoration:none}
+.fam .k{background:oklch(0.2 0.01 95);color:#fff;padding:9px 16px;border-radius:6px;font-weight:600}
+.fam h1{font-family:"Roboto Slab",serif;font-weight:300;font-size:92px;line-height:1.08;letter-spacing:-.02em;margin:50px 0 0}
+.fam h1 img{display:inline-block;width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:50% 16%;vertical-align:-20px;margin:0 6px}
+.fam .say{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:end;margin-top:26px}
+.fam .say p{margin:0;font-family:"Roboto Slab",serif;font-weight:300;font-size:21px;line-height:1.5;max-width:31em}
+.fam mark{background:oklch(0.92 0.07 150);color:inherit;padding:0 4px;border-radius:3px}
+.fam .go{display:flex;gap:22px;align-items:center;font-weight:600;font-size:16px}
+.fam .go a:first-child{text-decoration:underline;text-underline-offset:4px}
+.fam .four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:52px}
+.fam .four a{display:block;background:#fff;border:1px solid oklch(0.2 0.01 95 / .14);border-radius:10px;overflow:hidden}
+.fam .four img{width:100%;height:150px;object-fit:cover;object-position:0 0;border-bottom:1px solid oklch(0.2 0.01 95 / .14)}
+.fam .four b{display:block;font-family:"Roboto Slab",serif;font-weight:400;font-size:20px;padding:12px 16px 2px}
+.fam .four span{display:block;font-size:14px;line-height:1.4;padding:0 16px 14px;opacity:.75}
+
+/* ---------- N2: catalog, black ink and dense entries ---------- */
+.cat{min-height:800px;background:#fff;color:#111;font-family:"Source Serif 4",Georgia,serif;padding:26px 44px 0}
+.cat .mast{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:6px double #111;padding-bottom:12px}
+.cat .mast h1{font-family:"Archivo",sans-serif;font-stretch:70%;font-weight:900;font-size:104px;line-height:.84;letter-spacing:-.01em;text-transform:uppercase;margin:0}
+.cat .mast p{margin:0;text-align:right;font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.6}
+.cat .cols{display:grid;grid-template-columns:300px minmax(0,1fr) minmax(0,1fr);gap:30px;padding-top:22px}
+.cat h2{font-family:"Archivo",sans-serif;font-stretch:85%;font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 8px;border-bottom:1px solid #111;padding-bottom:4px}
+.cat .fn{font-size:31px;line-height:1.12;font-weight:600;margin:0 0 12px}
+.cat p{margin:0 0 18px;font-size:16.5px;line-height:1.42}
+.cat .entry{display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #111}
+.cat .entry img{width:200px;height:150px;object-fit:cover;object-position:0 0;border:1px solid #111;filter:grayscale(1) contrast(1.08)}
+.cat .entry h3{font-family:"Archivo",sans-serif;font-stretch:85%;font-weight:800;font-size:25px;line-height:1;margin:0 0 7px}
+.cat .entry p{margin:0 0 8px}
+.cat .acc{font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.7}
+
+/* ---------- N3: letter, one column of words ---------- */
+.let{min-height:800px;background:#fff;color:oklch(0.22 0.01 60);font-family:"Source Serif 4",Georgia,serif;padding:70px 0 0}
+.let .col{width:690px;margin:0 auto}
+.let img{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:50% 16%;margin-bottom:28px}
+.let p{font-size:23px;line-height:1.5;margin:0 0 22px}
+.let a{text-decoration-thickness:1.5px;text-underline-offset:4px}
+.let .sig{font-size:18px;opacity:.65;margin-top:34px}
+
+/* ---------- N4: ship log, a typed list ---------- */
+.log{min-height:800px;background:oklch(0.985 0.002 250);color:oklch(0.2 0.01 250);font-family:"IBM Plex Mono",ui-monospace,monospace;padding:34px 56px 0;font-size:15px}
+.log .bar{display:flex;justify-content:space-between;font-size:14px}
+.log h1{font-size:40px;line-height:1.15;font-weight:600;letter-spacing:-.02em;margin:40px 0 8px}
+.log .sub{margin:0 0 14px;opacity:.7}
+.log table{width:100%;border-collapse:collapse}
+.log th{text-align:left;font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.6;padding:16px 0 5px}
+.log td{padding:5px 22px 5px 0;border-top:1px solid oklch(0.2 0.01 250 / .14);vertical-align:top;white-space:nowrap}
+.log td:first-child{width:9.5em}
+.log td:nth-child(2){width:13em;font-weight:600}
+.log td.w{white-space:normal}
+.log td:last-child{text-align:right;padding-right:0;opacity:.8}
+.log .live{color:oklch(0.5 0.14 150)}
+
+/* ================= round 4: the letter, in the family look ================= */
+.fam.ltr{min-height:0;display:flow-root}
+.ltr .bar a:not(.k){text-decoration:underline;text-underline-offset:4px}
+.ltr .hi{font-family:"Roboto Slab",serif;font-weight:300;font-size:23px;line-height:1.3;margin:26px 0 0}
+.ltr .hi img{display:none}
+.ltr h1{margin:8px 0 0;font-size:88px}
+.ltr h1 img{width:98px;height:98px;vertical-align:-18px}
+.ltr .col{max-width:790px}
+.ltr p{font-family:"Roboto Slab",serif;font-weight:300;font-size:23px;line-height:1.5;margin:0 0 22px}
+.ltr .col > p:first-child{margin-top:30px}
+.ltr p a{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+.ltr .four{margin:6px 0 44px}
+.ltr .hist{margin:2px 0 38px;max-width:1010px;border-bottom:1px solid oklch(0.2 0.01 95 / .14)}
+.ltr .hist .r{display:grid;grid-template-columns:7.2em 6.6em minmax(0,1fr) auto;gap:0 22px;padding:10px 0;border-top:1px solid oklch(0.2 0.01 95 / .14);font-size:15.5px;line-height:1.45}
+.ltr .hist .yr,.ltr .hist .ti{opacity:.62}
+.ltr .hist b{font-weight:700}
+.ltr .sign{font-size:46px;line-height:1;margin:38px 0 10px}
+.ltr .from{font-family:"Archivo",sans-serif;font-weight:400;font-size:15px;opacity:.7;margin:0 0 34px}
+.ltr .ps{font-size:19px;margin:0 0 34px}
+.ltr .foot2{display:flex;gap:26px;align-items:center;border-top:1px solid oklch(0.2 0.01 95 / .14);padding:22px 0 26px;font-size:14px}
+.ltr .foot2 a{text-decoration:underline;text-underline-offset:4px}
+.ltr .foot2 span{margin-left:auto;opacity:.6}
+
+body.phone .ltr{padding:0 20px}
+body.phone .ltr .bar{height:64px;gap:0}
+body.phone .ltr .bar a:not(.k){display:none}
+body.phone .ltr .hi{font-size:18.5px;margin-top:12px}
+body.phone .ltr h1{font-size:44px;line-height:1.1}
+body.phone .ltr h1 br{display:none}
+body.phone .ltr h1 img{display:none}
+body.phone .ltr .hi img{display:inline-block;width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:50% 16%;vertical-align:middle;margin-right:12px}
+body.phone .ltr p{font-size:18.5px;margin-bottom:18px}
+body.phone .ltr .col > p:first-child{margin-top:22px}
+body.phone .ltr .four{grid-template-columns:minmax(0,1fr);gap:10px;margin:2px 0 32px}
+body.phone .ltr .four a{display:grid;grid-template-columns:116px minmax(0,1fr);grid-template-rows:1fr 1fr}
+body.phone .ltr .four img{height:87px;grid-row:1 / 3;border-bottom:0;border-right:1px solid oklch(0.2 0.01 95 / .14)}
+body.phone .ltr .four b{font-size:18px;padding:0 12px 2px;align-self:end}
+body.phone .ltr .four span{font-size:13.5px;padding:0 12px;align-self:start}
+body.phone .ltr .hist .r{grid-template-columns:minmax(0,1fr) auto;font-size:15px}
+body.phone .ltr .hist b{grid-column:1;grid-row:1}
+body.phone .ltr .hist .yr{grid-column:2;grid-row:1}
+body.phone .ltr .hist .what{grid-column:1 / 3}
+body.phone .ltr .hist .ti{display:none}
+body.phone .ltr .sign{font-size:38px;margin-top:28px}
+body.phone .ltr .ps{font-size:16.5px}
+body.phone .ltr .from{font-size:14.5px}
+body.phone .ltr .foot2{gap:20px}
+
+/* ================= round 5: the products without look-alike screenshots ================= */
+.ltr .crew{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;margin:12px 0 48px}
+.ltr .crew a{display:block}
+.ltr .crew img{display:block;width:84px;height:84px;margin:0 0 8px -6px}
+.ltr .crew b{display:block;font-family:"Roboto Slab",serif;font-weight:400;font-size:22px;line-height:1.25}
+.ltr .crew span{display:block;font-size:15px;line-height:1.4;opacity:.75;margin-top:3px;max-width:15em}
+.ltr .plist{margin:2px 0 40px;max-width:1010px;border-bottom:1px solid oklch(0.2 0.01 95 / .14)}
+.ltr .plist a{display:grid;grid-template-columns:11.5em minmax(0,1fr) auto;gap:0 22px;align-items:baseline;padding:12px 0;border-top:1px solid oklch(0.2 0.01 95 / .14)}
+.ltr .plist b{font-family:"Roboto Slab",serif;font-weight:400;font-size:21px}
+.ltr .plist span{font-size:16px}
+.ltr .plist i{font-style:normal;font-size:14px;opacity:.6}
+.ltr .sign{margin-bottom:38px}
+
+body.phone .ltr .crew{grid-template-columns:minmax(0,1fr);gap:14px;margin:4px 0 30px}
+body.phone .ltr .crew a{display:grid;grid-template-columns:62px minmax(0,1fr);column-gap:14px}
+body.phone .ltr .crew img{width:62px;height:62px;margin:0;grid-row:1 / 3;align-self:center}
+body.phone .ltr .crew b{font-size:19px;align-self:end}
+body.phone .ltr .crew span{font-size:14px;align-self:start;max-width:none}
+body.phone .ltr .sign{margin-bottom:28px}

@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🎨 site-redo · storyboard r5</title>
+<style>
+  :root{--canvas:#e8e8ea;--ink:#1d1d1f;--mut:#6e6e73;--line:#d2d2d7;--accent:#0a66d8;--gap:56px;--pad:40px}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--canvas);color:var(--ink);
+    font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  .bar{position:sticky;top:0;left:0;z-index:2;display:flex;justify-content:space-between;align-items:center;
+    gap:16px;padding:10px var(--pad);background:#fff;border-bottom:1px solid var(--line)}
+  .bar b{font-size:15px}
+  .bar .mut{color:var(--mut);margin-left:8px}
+  .zoom{display:flex;align-items:center;gap:4px;color:var(--mut);font-variant-numeric:tabular-nums}
+  .zoom button{font:inherit;border:1px solid var(--line);background:#fff;border-radius:6px;padding:2px 10px;cursor:pointer}
+  .zoom span{min-width:44px;text-align:center}
+
+  .board{padding:28px var(--pad) 8px;min-width:100%}
+  .flow{margin:0 0 44px}
+  .flow h2{font-size:13px;font-weight:600;color:var(--mut);margin:0 0 12px}
+  .boards{display:flex;flex-wrap:wrap;gap:36px var(--gap);align-items:flex-start}
+  figure.ab{margin:0;position:relative;flex:none}
+  .flow:not(.options):not(.plain) figure.ab + figure.ab::before{content:"→";position:absolute;left:calc(var(--gap) / -2 - 8px);
+    top:calc(var(--stage-h, 200px) / 2 + 22px);color:var(--mut);font-size:18px}
+  figure.ab .name{display:block;font-size:12px;color:var(--mut);margin:0 0 6px;cursor:zoom-in;white-space:nowrap}
+  figure.ab .name:hover{color:var(--accent)}
+  .tag{display:inline-block;font-weight:700;color:#fff;background:var(--ink);border-radius:4px;padding:0 6px;margin-right:6px;font-variant-numeric:tabular-nums}
+  [data-same] .tag{background:var(--mut)}
+  figure.ab:target .stage{outline:3px solid var(--accent);outline-offset:4px}
+  figure.ab .stage{overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.08),0 6px 20px rgba(0,0,0,.08)}
+  figure.ab iframe{display:block;border:0;transform-origin:0 0;background:#fff}
+  figure.ab .cap{margin:8px 0 0;font-size:13px;color:var(--ink)}
+
+  .notes{padding:0 var(--pad) 64px;max-width:880px}
+  .q{background:#fff;border-radius:10px;padding:12px 16px;margin:14px 0 0;max-width:880px}
+  .q p{margin:0}
+  .q .on{color:var(--mut);font-size:13px}
+  .q .pick{display:block;margin-top:4px;color:var(--mut);font-size:13px}
+  .q .pick b{color:var(--ink)}
+  details{margin-top:24px;color:var(--mut);font-size:13px}
+  details li{margin:0 0 6px;color:var(--ink)}
+  summary{cursor:pointer}
+  dialog{border:0;padding:0;background:transparent;max-width:none;max-height:none}
+  dialog::backdrop{background:rgba(20,20,22,.72)}
+  dialog .name{color:#fff;font-size:13px;margin:0 0 8px}
+  dialog .box{overflow:hidden;background:#fff;border-radius:6px}
+  dialog iframe{display:block;border:0;transform-origin:0 0}
+  .peek{position:fixed;inset:0;margin:auto;z-index:3;pointer-events:none;overflow:hidden;background:#fff;
+    border-radius:6px;box-shadow:0 12px 48px rgba(0,0,0,.35)}
+  .peek iframe{display:block;border:0;transform-origin:0 0}
+</style>
+</head>
+<body data-round="5">
+<header class="bar">
+  <div><b>peteknowsai.xyz redo</b><span class="mut">storyboard · round <span data-round-no>5</span> · feature/site-redo</span></div>
+  <div class="zoom"><button data-z="out" title="Zoom out (-)">−</button><button data-z="fit" title="Fit (1)">Fit</button>
+    <span data-z-label>100%</span><button data-z="in" title="Zoom in (+)">+</button><button data-z="full" title="Actual size (0)">1:1</button></div>
+</header>
+
+<main class="board">
+  <section class="flow options">
+    <h2>M · How the four products show, now that the look-alike screenshots are gone · pick one</h2>
+    <div class="boards">
+      <figure class="ab" data-mount="M1">
+        <span class="name">In the sentence</span><div class="stage"></div>
+        <p class="cap">No pictures. The four are links inside the letter, each with a few words on what it does.</p>
+      </figure>
+      <figure class="ab" data-mount="M2">
+        <span class="name">A short list</span><div class="stage"></div>
+        <p class="cap">No pictures. Four plain rows: the name, one line and the address, in the same style as your history further down.</p>
+      </figure>
+      <figure class="ab" data-mount="M3">
+        <span class="name">Four characters</span><div class="stage"></div>
+        <p class="cap">Each product keeps the character from its own site, so the four read as four different things.</p>
+      </figure>
+    </div>
+    <div class="q"><p><span class="tag">Q1</span>How should the four products show? <span class="on">· M1, M2, M3</span></p><span class="pick">I'd pick: <b>M3, the four characters.</b> They are yours already, each one is a different shape and color, and they say "four different things" at a glance. The page below is drawn with M3. M1 is the pick if you'd rather have no pictures at all.</span></div>
+  </section>
+
+  <section class="flow">
+    <h2>L · The whole page, top to bottom · no Paonia, and the only booking is the free 30-minute call</h2>
+    <div class="boards">
+      <figure class="ab" data-mount="L1">
+        <span class="name">Top of the page</span><div class="stage"></div>
+        <p class="cap">The letter opens the page. The four products sit inside it with their own characters, and each one opens its live site.</p>
+      </figure>
+      <figure class="ab" data-mount="L2">
+        <span class="name">The rest of the letter</span><div class="stage"></div>
+        <p class="cap">Clients, what runs underneath, your history as a short list, what you want next, and one way to reach you.</p>
+      </figure>
+      <figure class="ab" data-mount="P1">
+        <span class="name">On a phone, top</span><div class="stage"></div>
+        <p class="cap">The same letter on a phone. The products turn into four rows.</p>
+      </figure>
+      <figure class="ab" data-mount="P2">
+        <span class="name">On a phone, the rest</span><div class="stage"></div>
+        <p class="cap">The history stacks, and the letter ends the same way.</p>
+      </figure>
+    </div>
+    <div class="q"><p><span class="tag">Q2</span>Anything else to change before I build it? <span class="on">· L1, L2, P1, P2</span></p><span class="pick">I'd pick: <b>build it.</b> Say "lock it" with your answer to Q1 and I start.</span></div>
+  </section>
+</main>
+
+<section class="notes">
+  <details>
+    <summary>Calls I made</summary>
+    <ul>
+      <li><b>C1</b> One page. Each product opens its own live site. The other way is a page per product, which needs stories and numbers we don't have yet.</li>
+      <li><b>C2</b> The painted portrait is the picture of you. The other way is your real photo, which reads more serious and less like you.</li>
+      <li><b>C3</b> The words come from your new LinkedIn About and your resume, so all three say the same thing.</li>
+      <li><b>C4</b> The job history shows the career break in the same words as LinkedIn. The other way is to leave it out and let the dates skip.</li>
+      <li><b>C5</b> The resume button gives the new resume, with your phone number taken off the web copy. The other way is phone number on.</li>
+      <li><b>C6</b> Email stays pete@peteknowsai.xyz. I couldn't confirm it reaches you, so tell me if it doesn't.</li>
+      <li><b>C7</b> Your call: the only booking is the free 30-minute slot you already have on Cal.com. The paid consults and the 15-minute slot come off the site.</li>
+      <li><b>C8</b> peteknowsai.xyz without the www doesn't load today. I point it at the site, which is one DNS record on your domain.</li>
+      <li><b>C9</b> Same code and same host: the repo you have, on Cloudflare Pages. The leftovers from the app builder it started in come out. The other way is a rebuild on Next.js and Vercel, your usual stack, which buys nothing for one static page.</li>
+      <li><b>C10</b> Link previews get fixed. Today they point at the address that doesn't load and crop your face. The broken /whatsapp page goes.</li>
+      <li><b>C11</b> X, GitHub and LinkedIn each show once, at the foot. Substack stays off.</li>
+      <li><b>C12</b> No tracking and no contact form.</li>
+      <li><b>C13</b> Nothing moves except what you point at, and nothing moves at all for a visitor who has asked their device for less motion.</li>
+      <li><b>C14</b> Going live: when it passes my checks I upload it to www.peteknowsai.xyz myself. Locking this board is your yes to that. Say "preview first" and you get a private link before it replaces the live site.</li>
+      <li><b>C15</b> Color stays quiet: dark ink on a pale page, with one soft green for a highlighted phrase. Your portrait and the four characters carry the rest.</li>
+      <li><b>C16</b> The letter is the whole page. No sections with headings, and no boxes.</li>
+      <li><b>C17</b> The top bar has three things: email, book a call and the resume. The other way is links that jump down the page, which a letter this short doesn't need.</li>
+      <li><b>C18</b> The letter is signed "Pete" in the same type as the rest. The other way is a handwritten signature, which I left out because it reads as decoration.</li>
+      <li><b>C19</b> Your call: the page names no town. It doesn't say remote either, since a remote job is something you can raise on a call.</li>
+      <li><b>C20</b> The four characters are copied from your live product sites as they are. On your sites they blink and move. Here they hold still, per C13.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>For the record</summary>
+    <ul>
+      <li>Today's site is a link list started in an app builder: Vite, React and Tailwind, last changed June 2025. It never names the agency, a product, a client or the job hunt.</li>
+      <li>It is served from Cloudflare Pages by manual upload. A push to main deploys nothing.</li>
+      <li>The resume it serves is the old one, which ends at Matter.</li>
+      <li>Link previews and the /whatsapp page point at the address without www, which has no web record.</li>
+      <li>No tests, and lint is broken. The app builder's script still ships in the page head.</li>
+      <li>Round 1 was a full-color fruit crate label, which you called way too colorful. Round 2 was the same layout in black and white, and you asked for new directions. Round 3 drew four, and you asked for the family look and the letter combined. Round 4 was that mix. You liked it and asked for three changes: no Paonia, the free call as the only booking, and no row of four site screenshots, because the four sites look alike. This round makes those three.</li>
+      <li>My notes on who the site is for were written from your LinkedIn, your resume and your messages, not from an interview. I assumed hiring managers and recruiters first and clients second. Tell me if that's wrong.</li>
+    </ul>
+  </details>
+</section>
+
+<template data-frame="M1" data-w="1280" data-h="190">
+<link rel="stylesheet" href="site-redo.css">
+<div class="fam ltr">
+  <div class="col">
+    <p>Lately that's four products, all live. <a href="#">Cells</a> gives every employee an AI chief of staff. <a href="#">HomeZero</a> researches any address before you buy. <a href="#">Transparent Towns</a> tells you what your town decided, in plain words. <a href="#">Yeoman</a> finds small businesses for sale and shows the numbers.</p>
+  </div>
+</div>
+
+</template>
+
+<template data-frame="M2" data-w="1280" data-h="354">
+<link rel="stylesheet" href="site-redo.css">
+<div class="fam ltr">
+  <div class="col"><p>Lately that's four products, all live. Open any of them.</p></div>
+  <div class="plist"><a href="#"><b>Cells</b><span>An AI chief of staff for every employee.</span><i>cells.md</i></a><a href="#"><b>HomeZero</b><span>Research any address before you buy.</span><i>homezero.md</i></a><a href="#"><b>Transparent Towns</b><span>What your town decided, in plain words.</span><i>ttowns.org</i></a><a href="#"><b>Yeoman</b><span>Small businesses for sale, with the numbers.</span><i>yeoman.md</i></a></div>
+</div>
+
+</template>
+
+<template data-frame="M3" data-w="1280" data-h="299">
+<link rel="stylesheet" href="site-redo.css">
+<div class="fam ltr">
+  <div class="col"><p>Lately that's four products, all live. Open any of them.</p></div>
+  <div class="crew"><a href="#"><img src="site-assets/mascot-cells.svg" alt=""><b>Cells</b><span>An AI chief of staff for every employee.</span></a><a href="#"><img src="site-assets/mascot-homezero.svg" alt=""><b>HomeZero</b><span>Research any address before you buy.</span></a><a href="#"><img src="site-assets/mascot-ttowns.svg" alt=""><b>Transparent Towns</b><span>What your town decided, in plain words.</span></a><a href="#"><img src="site-assets/mascot-yeoman.svg" alt=""><b>Yeoman</b><span>Small businesses for sale, with the numbers.</span></a></div>
+</div>
+
+</template>
+
+<template data-frame="L1" data-w="1280" data-h="766">
+<link rel="stylesheet" href="site-redo.css">
+<div class="fam ltr">
+  <div class="bar"><b>Pete Knows AI</b><a href="#">Email</a><a href="#">Book a call</a><a class="k" href="#">Resume</a></div>
+  <p class="hi"><img src="site-assets/portrait.jpg" alt="">Hi, I'm Pete.</p>
+  <h1>I build AI agents <img src="site-assets/portrait.jpg" alt="Painted portrait of Pete in round orange sunglasses"><br>and ship them myself.</h1>
+  <div class="col">
+    <p>I've led product for twenty years and founded a company that was acquired. Since 2025 I've run a one-person shop that <mark>takes an idea to working software</mark>, with coding agents doing most of the typing.</p>
+  </div>
+  <div class="col"><p>Lately that's four products, all live. Open any of them.</p></div>
+  <div class="crew"><a href="#"><img src="site-assets/mascot-cells.svg" alt=""><b>Cells</b><span>An AI chief of staff for every employee.</span></a><a href="#"><img src="site-assets/mascot-homezero.svg" alt=""><b>HomeZero</b><span>Research any address before you buy.</span></a><a href="#"><img src="site-assets/mascot-ttowns.svg" alt=""><b>Transparent Towns</b><span>What your town decided, in plain words.</span></a><a href="#"><img src="site-assets/mascot-yeoman.svg" alt=""><b>Yeoman</b><span>Small businesses for sale, with the numbers.</span></a></div>
+</div>
+
+</template>
+
+<template data-frame="L2" data-w="1280" data-h="1213">
+<link rel="stylesheet" href="site-redo.css">
+<div class="fam ltr">
+  <div class="col">
+    <p>I also build for clients: CommonLight, which checks community resource data for health plans and counties, Port32, a marina management platform, and Peggy, which turns school email into one-tap actions for parents.</p>
+    <p>Underneath all of it are two things I built for myself: an agent runtime where each agent runs in its own Linux machine, with memory and overnight learning, and Ship, a Claude Code plugin that takes a feature from idea to merged pull request in one command.</p>
+    <p>Before this I spent twenty years in product. The short version:</p>
+  </div>
+  <div class="hist">
+    <div class="r"><span class="yr">2022 to 2025</span><b>Matter</b><span class="what">Replaced a 12-step manual listing process with an agentic workflow that delivers in under 90 seconds.</span><span class="ti">AI Product Lead</span></div>
+    <div class="r"><span class="yr">2019 to 2022</span><b>Home</b><span class="what">Stay-at-home dad. Traded crypto on my own on the side.</span><span class="ti">Career break</span></div>
+    <div class="r"><span class="yr">2018 to 2019</span><b>AIKON</b><span class="what">Closed four partnerships worth $7M ARR.</span><span class="ti">Sr Product Manager</span></div>
+    <div class="r"><span class="yr">2015 to 2017</span><b>Vendini</b><span class="what">Rebuilt the legacy ticketing system as a cloud API platform. Support tickets fell 50%.</span><span class="ti">Senior Product Manager</span></div>
+    <div class="r"><span class="yr">2013 to 2014</span><b>Checkwise</b><span class="what">Bootstrapped a food safety platform to a 7-figure acquisition in under 2 years.</span><span class="ti">CEO and Founder</span></div>
+    <div class="r"><span class="yr">2009 to 2013</span><b>Agilysys</b><span class="what">Led the team that launched the company's first cloud point-of-sale system.</span><span class="ti">Director of Software Development</span></div>
+    <div class="r"><span class="yr">2003 to 2009</span><b>ParTech</b><span class="what">Mobile products for Fortune 500 restaurant chains.</span><span class="ti">Sr. Product Manager</span></div>
+    <div class="r"><span class="yr">2000 to 2003</span><b>OpenTable</b><span class="what">Early team, back when restaurants ran on paper reservation books.</span><span class="ti">Sr. Implementation Specialist</span></div>
+  </div>
+  <div class="col">
+    <p>Now I'm looking for a team using AI for <mark>something that matters</mark>: health, schools, towns, climate, public benefit. I want the work to make a difference, and I'd like it to be fun.</p>
+    <p><a href="#">Email me</a>, <a href="#">book a 30-minute call</a>, or <a href="#">read my resume</a>.</p>
+    <p class="sign">Pete</p>
+  </div>
+  <div class="foot2"><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">X</a><span>© 2026 Pete McCarthy</span></div>
+</div>
+
+</template>
+
+<template data-frame="P1" data-w="390" data-h="889">
+<link rel="stylesheet" href="site-redo.css">
+<div class="fam ltr">
+  <div class="bar"><b>Pete Knows AI</b><a href="#">Email</a><a href="#">Book a call</a><a class="k" href="#">Resume</a></div>
+  <p class="hi"><img src="site-assets/portrait.jpg" alt="">Hi, I'm Pete.</p>
+  <h1>I build AI agents <img src="site-assets/portrait.jpg" alt="Painted portrait of Pete in round orange sunglasses"><br>and ship them myself.</h1>
+  <div class="col">
+    <p>I've led product for twenty years and founded a company that was acquired. Since 2025 I've run a one-person shop that <mark>takes an idea to working software</mark>, with coding agents doing most of the typing.</p>
+  </div>
+  <div class="col"><p>Lately that's four products, all live. Open any of them.</p></div>
+  <div class="crew"><a href="#"><img src="site-assets/mascot-cells.svg" alt=""><b>Cells</b><span>An AI chief of staff for every employee.</span></a><a href="#"><img src="site-assets/mascot-homezero.svg" alt=""><b>HomeZero</b><span>Research any address before you buy.</span></a><a href="#"><img src="site-assets/mascot-ttowns.svg" alt=""><b>Transparent Towns</b><span>What your town decided, in plain words.</span></a><a href="#"><img src="site-assets/mascot-yeoman.svg" alt=""><b>Yeoman</b><span>Small businesses for sale, with the numbers.</span></a></div>
+</div>
+<script>document.body.className = "phone";</script>
+</template>
+
+<template data-frame="P2" data-w="390" data-h="1554">
+<link rel="stylesheet" href="site-redo.css">
+<div class="fam ltr">
+  <div class="col">
+    <p>I also build for clients: CommonLight, which checks community resource data for health plans and counties, Port32, a marina management platform, and Peggy, which turns school email into one-tap actions for parents.</p>
+    <p>Underneath all of it are two things I built for myself: an agent runtime where each agent runs in its own Linux machine, with memory and overnight learning, and Ship, a Claude Code plugin that takes a feature from idea to merged pull request in one command.</p>
+    <p>Before this I spent twenty years in product. The short version:</p>
+  </div>
+  <div class="hist">
+    <div class="r"><span class="yr">2022 to 2025</span><b>Matter</b><span class="what">Replaced a 12-step manual listing process with an agentic workflow that delivers in under 90 seconds.</span><span class="ti">AI Product Lead</span></div>
+    <div class="r"><span class="yr">2019 to 2022</span><b>Home</b><span class="what">Stay-at-home dad. Traded crypto on my own on the side.</span><span class="ti">Career break</span></div>
+    <div class="r"><span class="yr">2018 to 2019</span><b>AIKON</b><span class="what">Closed four partnerships worth $7M ARR.</span><span class="ti">Sr Product Manager</span></div>
+    <div class="r"><span class="yr">2015 to 2017</span><b>Vendini</b><span class="what">Rebuilt the legacy ticketing system as a cloud API platform. Support tickets fell 50%.</span><span class="ti">Senior Product Manager</span></div>
+    <div class="r"><span class="yr">2013 to 2014</span><b>Checkwise</b><span class="what">Bootstrapped a food safety platform to a 7-figure acquisition in under 2 years.</span><span class="ti">CEO and Founder</span></div>
+    <div class="r"><span class="yr">2009 to 2013</span><b>Agilysys</b><span class="what">Led the team that launched the company's first cloud point-of-sale system.</span><span class="ti">Director of Software Development</span></div>
+    <div class="r"><span class="yr">2003 to 2009</span><b>ParTech</b><span class="what">Mobile products for Fortune 500 restaurant chains.</span><span class="ti">Sr. Product Manager</span></div>
+    <div class="r"><span class="yr">2000 to 2003</span><b>OpenTable</b><span class="what">Early team, back when restaurants ran on paper reservation books.</span><span class="ti">Sr. Implementation Specialist</span></div>
+  </div>
+  <div class="col">
+    <p>Now I'm looking for a team using AI for <mark>something that matters</mark>: health, schools, towns, climate, public benefit. I want the work to make a difference, and I'd like it to be fun.</p>
+    <p><a href="#">Email me</a>, <a href="#">book a 30-minute call</a>, or <a href="#">read my resume</a>.</p>
+    <p class="sign">Pete</p>
+  </div>
+  <div class="foot2"><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">X</a><span>© 2026 Pete McCarthy</span></div>
+</div>
+<script>document.body.className = "phone";</script>
+</template>
+
+<script>
+// Mount every <template data-frame> into the artboard that names it, all at one zoom.
+(function () {
+  const templates = new Map([...document.querySelectorAll('template[data-frame]')].map((t) => [t.dataset.frame, t]));
+  const base = location.href.split('#')[0];
+  const frame = (t) => {
+    const f = document.createElement('iframe');
+    f.width = Number(t.dataset.w || 1280); f.height = Number(t.dataset.h || 800); f.title = t.dataset.frame;
+    f.srcdoc = '<!doctype html><html><head><meta charset="utf-8"><base href="' + base + '"></head><body>' + t.innerHTML + '</body></html>';
+    return f;
+  };
+  const boards = [];
+  for (const fig of document.querySelectorAll('figure.ab[data-mount]')) {
+    // The code is the frame's tag and anchor, so "A3" in chat, in the plan and on the page is one name.
+    const code = fig.dataset.mount, tag = document.createElement('span');
+    tag.className = 'tag'; tag.textContent = code;
+    fig.id = code; fig.querySelector('.name').prepend(tag);
+    const t = templates.get(code);
+    if (!t) continue;
+    const f = frame(t);
+    fig.querySelector('.stage').append(f);
+    boards.push({ fig, f, w: +f.width, h: +f.height });
+    fig.querySelector('.name').addEventListener('click', () => enlarge(t, fig.querySelector('.name').textContent));
+    // Point at a frame for a beat and a full-size copy floats over the board; move off and it goes.
+    const stage = fig.querySelector('.stage');
+    let timer, peek;
+    stage.addEventListener('mouseenter', () => {
+      timer = setTimeout(() => { peek = sized(t, 'peek'); document.body.append(peek); }, 250);
+    });
+    stage.addEventListener('mouseleave', () => { clearTimeout(timer); peek?.remove(); peek = null; });
+  }
+
+  // Full size, alone, scaled down only if the screen is smaller. Esc or a click outside closes.
+  const dlg = document.querySelector('dialog');
+  function sized(t, cls) {
+    const f = frame(t), w = +f.width, h = +f.height, s = Math.min(1, (innerWidth - 80) / w, (innerHeight - 100) / h);
+    f.style.transform = 'scale(' + s + ')';
+    const box = document.createElement('div');
+    box.className = cls; box.style.width = w * s + 'px'; box.style.height = h * s + 'px';
+    box.append(f);
+    return box;
+  }
+  function enlarge(t, name) {
+    const box = sized(t, 'box');
+    const label = document.createElement('p');
+    label.className = 'name'; label.textContent = name;
+    dlg.replaceChildren(label, box); dlg.showModal();
+  }
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+
+  let z = 1;
+  const zLabel = document.querySelector('[data-z-label]');
+  function zoom(v) {
+    z = Math.max(0.1, Math.min(1, v));
+    for (const b of boards) {
+      b.f.style.transform = 'scale(' + z + ')';
+      const st = b.fig.querySelector('.stage');
+      st.style.width = b.w * z + 'px'; st.style.height = b.h * z + 'px';
+      b.fig.style.width = Math.max(b.w * z, 160) + 'px';
+      b.fig.style.setProperty('--stage-h', b.h * z + 'px');
+    }
+    zLabel.textContent = Math.round(z * 100) + '%';
+  }
+  // Fit = readable, not one line: the tallest frame fills the window's height and the widest its
+  // width, and rows wrap.
+  function fit() {
+    if (!boards.length) return zoom(1);
+    const h = Math.max(...boards.map((b) => b.h)), w = Math.max(...boards.map((b) => b.w));
+    zoom(Math.max(0.3, Math.min(1, (innerHeight - 200) / h, (innerWidth - 80) / w)));
+  }
+  const act = { in: () => zoom(z + 0.1), out: () => zoom(z - 0.1), fit, full: () => zoom(1) };
+  document.querySelector('.zoom').addEventListener('click', (e) => act[e.target.dataset.z]?.());
+  addEventListener('keydown', (e) => {
+    const k = { '+': 'in', '=': 'in', '-': 'out', '1': 'fit', '0': 'full' }[e.key];
+    if (k && !e.metaKey && !e.ctrlKey) act[k]();
+  });
+  fit();
+  // A link to one frame (storyboard.html#A3) lands on it; the ids only exist once mounted.
+  const hit = /^#[A-Z]\d+$/.test(location.hash) && document.getElementById(location.hash.slice(1));
+  if (hit) hit.scrollIntoView({ block: 'center', inline: 'center' });
+
+  const r = document.body.dataset.round, el = document.querySelector('[data-round-no]');
+  if (r && el) el.textContent = r;
+})();
+</script>
+</body>
+</html>

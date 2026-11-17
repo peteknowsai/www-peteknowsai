@@ -1,0 +1,40 @@
+<!doctype html>
+<!--
+  The link preview picture, public/og.png. It is rendered from the dev server, not from disk,
+  so the fonts load. With `npm run dev -- --port 5187 --strictPort` running:
+
+  "$(ls -d ~/.cache/puppeteer/chrome-headless-shell/*/*/chrome-headless-shell | tail -1)" \
+    --headless --hide-scrollbars --virtual-time-budget=3000 --window-size=1200,630 \
+    --screenshot=public/og.png http://localhost:5187/scripts/og.html
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Link preview picture</title>
+<link rel="stylesheet" href="/src/site.css">
+<style>
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  .page { max-width: none; padding: 0 72px; }
+  .bar { height: 96px; font-size: 22px; }
+  .bar b { font-size: 24px; }
+  .bar span { color: var(--quiet); }
+  .hi { font-size: 34px; margin-top: 30px; }
+  h1 { font-size: 92px; margin-top: 10px; }
+  .crew { margin: 54px 0 0; }
+  .crew b { font-size: 24px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="bar"><b>Pete Knows AI</b><span>www.peteknowsai.xyz</span></div>
+  <p class="hi">Hi, I'm Pete.</p>
+  <h1>I build AI agents <img src="/images/portrait.jpg" alt=""><br>and ship them myself.</h1>
+  <ul class="crew">
+    <li><img src="/images/mascot-cells.svg" alt=""><b>Cells</b></li>
+    <li><img src="/images/mascot-homezero.svg" alt=""><b>HomeZero</b></li>
+    <li><img src="/images/mascot-ttowns.svg" alt=""><b>Transparent Towns</b></li>
+    <li><img src="/images/mascot-yeoman.svg" alt=""><b>Yeoman</b></li>
+  </ul>
+</div>
+</body>
+</html>
