@@ -27,4 +27,4 @@ Docs home is `specs/`. The design of record is `specs/designs/2026-11-17-site-re
 - Nothing moves except on hover or focus, and nothing at all under reduced motion.
 - The words on the page are the storyboard's. A test compares them, so a copy change starts in the storyboard.
 - `public/resume.pdf` is printed from a source kept outside this repo, with the phone number and the town removed. Never commit the source.
-- There is no `404.html`, so the host serves the page itself for any unknown path. Old links land on the letter.
+- There is no `404.html`, so the host serves the page itself for any unknown path. Old links land on the letter. `public/robots.txt` is there so crawlers get a real one and not the page.

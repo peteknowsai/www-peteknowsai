@@ -138,6 +138,10 @@ test('the old pages are gone', () => {
   assert.ok(!existsSync('dist/images/whatsapp.png'))
 })
 
+test('crawlers get a real robots.txt, not the page', () => {
+  assert.match(readFileSync('dist/robots.txt', 'utf8'), /^User-agent: \*\nAllow: \/\n$/)
+})
+
 test('every image has an alt attribute', () => {
   for (const img of html.matchAll(/<img\b[^>]*>/g)) assert.match(img[0], /\salt="/)
 })
