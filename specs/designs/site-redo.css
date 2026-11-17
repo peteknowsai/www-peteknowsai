@@ -194,3 +194,51 @@ html:has(body.phone){overflow:hidden}
 .log td.w{white-space:normal}
 .log td:last-child{text-align:right;padding-right:0;opacity:.8}
 .log .live{color:oklch(0.5 0.14 150)}
+
+/* ================= round 4: the letter, in the family look ================= */
+.fam.ltr{min-height:0;display:flow-root}
+.ltr .bar a:not(.k){text-decoration:underline;text-underline-offset:4px}
+.ltr .hi{font-family:"Roboto Slab",serif;font-weight:300;font-size:23px;line-height:1.3;margin:26px 0 0}
+.ltr .hi img{display:none}
+.ltr h1{margin:8px 0 0;font-size:88px}
+.ltr h1 img{width:98px;height:98px;vertical-align:-18px}
+.ltr .col{max-width:790px}
+.ltr p{font-family:"Roboto Slab",serif;font-weight:300;font-size:23px;line-height:1.5;margin:0 0 22px}
+.ltr .col > p:first-child{margin-top:30px}
+.ltr p a{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+.ltr .four{margin:6px 0 44px}
+.ltr .hist{margin:2px 0 38px;max-width:1010px;border-bottom:1px solid oklch(0.2 0.01 95 / .14)}
+.ltr .hist .r{display:grid;grid-template-columns:7.2em 6.6em minmax(0,1fr) auto;gap:0 22px;padding:10px 0;border-top:1px solid oklch(0.2 0.01 95 / .14);font-size:15.5px;line-height:1.45}
+.ltr .hist .yr,.ltr .hist .ti{opacity:.62}
+.ltr .hist b{font-weight:700}
+.ltr .sign{font-size:46px;line-height:1;margin:38px 0 10px}
+.ltr .from{font-family:"Archivo",sans-serif;font-weight:400;font-size:15px;opacity:.7;margin:0 0 34px}
+.ltr .ps{font-size:19px;margin:0 0 34px}
+.ltr .foot2{display:flex;gap:26px;align-items:center;border-top:1px solid oklch(0.2 0.01 95 / .14);padding:22px 0 26px;font-size:14px}
+.ltr .foot2 a{text-decoration:underline;text-underline-offset:4px}
+.ltr .foot2 span{margin-left:auto;opacity:.6}
+
+body.phone .ltr{padding:0 20px}
+body.phone .ltr .bar{height:64px;gap:0}
+body.phone .ltr .bar a:not(.k){display:none}
+body.phone .ltr .hi{font-size:18.5px;margin-top:12px}
+body.phone .ltr h1{font-size:44px;line-height:1.1}
+body.phone .ltr h1 br{display:none}
+body.phone .ltr h1 img{display:none}
+body.phone .ltr .hi img{display:inline-block;width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:50% 16%;vertical-align:middle;margin-right:12px}
+body.phone .ltr p{font-size:18.5px;margin-bottom:18px}
+body.phone .ltr .col > p:first-child{margin-top:22px}
+body.phone .ltr .four{grid-template-columns:minmax(0,1fr);gap:10px;margin:2px 0 32px}
+body.phone .ltr .four a{display:grid;grid-template-columns:116px minmax(0,1fr);grid-template-rows:1fr 1fr}
+body.phone .ltr .four img{height:87px;grid-row:1 / 3;border-bottom:0;border-right:1px solid oklch(0.2 0.01 95 / .14)}
+body.phone .ltr .four b{font-size:18px;padding:0 12px 2px;align-self:end}
+body.phone .ltr .four span{font-size:13.5px;padding:0 12px;align-self:start}
+body.phone .ltr .hist .r{grid-template-columns:minmax(0,1fr) auto;font-size:15px}
+body.phone .ltr .hist b{grid-column:1;grid-row:1}
+body.phone .ltr .hist .yr{grid-column:2;grid-row:1}
+body.phone .ltr .hist .what{grid-column:1 / 3}
+body.phone .ltr .hist .ti{display:none}
+body.phone .ltr .sign{font-size:38px;margin-top:28px}
+body.phone .ltr .ps{font-size:16.5px}
+body.phone .ltr .from{font-size:14.5px}
+body.phone .ltr .foot2{gap:20px}
