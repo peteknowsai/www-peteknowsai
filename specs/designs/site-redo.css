@@ -242,3 +242,23 @@ body.phone .ltr .sign{font-size:38px;margin-top:28px}
 body.phone .ltr .ps{font-size:16.5px}
 body.phone .ltr .from{font-size:14.5px}
 body.phone .ltr .foot2{gap:20px}
+
+/* ================= round 5: the products without look-alike screenshots ================= */
+.ltr .crew{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;margin:12px 0 48px}
+.ltr .crew a{display:block}
+.ltr .crew img{display:block;width:84px;height:84px;margin:0 0 8px -6px}
+.ltr .crew b{display:block;font-family:"Roboto Slab",serif;font-weight:400;font-size:22px;line-height:1.25}
+.ltr .crew span{display:block;font-size:15px;line-height:1.4;opacity:.75;margin-top:3px;max-width:15em}
+.ltr .plist{margin:2px 0 40px;max-width:1010px;border-bottom:1px solid oklch(0.2 0.01 95 / .14)}
+.ltr .plist a{display:grid;grid-template-columns:11.5em minmax(0,1fr) auto;gap:0 22px;align-items:baseline;padding:12px 0;border-top:1px solid oklch(0.2 0.01 95 / .14)}
+.ltr .plist b{font-family:"Roboto Slab",serif;font-weight:400;font-size:21px}
+.ltr .plist span{font-size:16px}
+.ltr .plist i{font-style:normal;font-size:14px;opacity:.6}
+.ltr .sign{margin-bottom:38px}
+
+body.phone .ltr .crew{grid-template-columns:minmax(0,1fr);gap:14px;margin:4px 0 30px}
+body.phone .ltr .crew a{display:grid;grid-template-columns:62px minmax(0,1fr);column-gap:14px}
+body.phone .ltr .crew img{width:62px;height:62px;margin:0;grid-row:1 / 3;align-self:center}
+body.phone .ltr .crew b{font-size:19px;align-self:end}
+body.phone .ltr .crew span{font-size:14px;align-self:start;max-width:none}
+body.phone .ltr .sign{margin-bottom:28px}

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🎨 site-redo · storyboard r4</title>
+<title>🎨 site-redo · storyboard r5</title>
 <style>
   :root{--canvas:#e8e8ea;--ink:#1d1d1f;--mut:#6e6e73;--line:#d2d2d7;--accent:#0a66d8;--gap:56px;--pad:40px}
   *{box-sizing:border-box}
@@ -52,24 +52,43 @@
   .peek iframe{display:block;border:0;transform-origin:0 0}
 </style>
 </head>
-<body data-round="4">
+<body data-round="5">
 <header class="bar">
-  <div><b>peteknowsai.xyz redo</b><span class="mut">storyboard · round <span data-round-no>4</span> · feature/site-redo</span></div>
+  <div><b>peteknowsai.xyz redo</b><span class="mut">storyboard · round <span data-round-no>5</span> · feature/site-redo</span></div>
   <div class="zoom"><button data-z="out" title="Zoom out (-)">−</button><button data-z="fit" title="Fit (1)">Fit</button>
     <span data-z-label>100%</span><button data-z="in" title="Zoom in (+)">+</button><button data-z="full" title="Actual size (0)">1:1</button></div>
 </header>
 
 <main class="board">
+  <section class="flow options">
+    <h2>M · How the four products show, now that the look-alike screenshots are gone · pick one</h2>
+    <div class="boards">
+      <figure class="ab" data-mount="M1">
+        <span class="name">In the sentence</span><div class="stage"></div>
+        <p class="cap">No pictures. The four are links inside the letter, each with a few words on what it does.</p>
+      </figure>
+      <figure class="ab" data-mount="M2">
+        <span class="name">A short list</span><div class="stage"></div>
+        <p class="cap">No pictures. Four plain rows: the name, one line and the address, in the same style as your history further down.</p>
+      </figure>
+      <figure class="ab" data-mount="M3">
+        <span class="name">Four characters</span><div class="stage"></div>
+        <p class="cap">Each product keeps the character from its own site, so the four read as four different things.</p>
+      </figure>
+    </div>
+    <div class="q"><p><span class="tag">Q1</span>How should the four products show? <span class="on">· M1, M2, M3</span></p><span class="pick">I'd pick: <b>M3, the four characters.</b> They are yours already, each one is a different shape and color, and they say "four different things" at a glance. The page below is drawn with M3. M1 is the pick if you'd rather have no pictures at all.</span></div>
+  </section>
+
   <section class="flow">
-    <h2>L · The letter, in the look of your products · the whole page, top to bottom</h2>
+    <h2>L · The whole page, top to bottom · no Paonia, and the only booking is the free 30-minute call</h2>
     <div class="boards">
       <figure class="ab" data-mount="L1">
         <span class="name">Top of the page</span><div class="stage"></div>
-        <p class="cap">The page is a letter from you. The four products sit inside it as picture tiles, and each one opens its live site.</p>
+        <p class="cap">The letter opens the page. The four products sit inside it with their own characters, and each one opens its live site.</p>
       </figure>
       <figure class="ab" data-mount="L2">
         <span class="name">The rest of the letter</span><div class="stage"></div>
-        <p class="cap">Clients, what runs underneath, your history as a short list a recruiter can scan, then what you want next.</p>
+        <p class="cap">Clients, what runs underneath, your history as a short list, what you want next, and one way to reach you.</p>
       </figure>
       <figure class="ab" data-mount="P1">
         <span class="name">On a phone, top</span><div class="stage"></div>
@@ -80,40 +99,7 @@
         <p class="cap">The history stacks, and the letter ends the same way.</p>
       </figure>
     </div>
-    <div class="q"><p><span class="tag">Q1</span>Is this the mix you had in mind? <span class="on">· L1, L2, P1, P2</span></p><span class="pick">I'd pick: <b>yes, build this.</b> It keeps the letter's voice, and your products are on screen as pictures before anyone scrolls.</span></div>
-  </section>
-
-  <section class="flow options">
-    <h2>D · How the letter ends · pick one</h2>
-    <div class="boards">
-      <figure class="ab" data-mount="D1">
-        <span class="name">A job, nothing else</span><div class="stage"></div>
-        <p class="cap">Email, one free call and the resume. The paid consult buttons are gone.</p>
-      </figure>
-      <figure class="ab" data-mount="D2">
-        <span class="name">A job, and a P.S. for paid consults</span><div class="stage"></div>
-        <p class="cap">The same ending, with a P.S. that keeps the paid consults.</p>
-      </figure>
-    </div>
-    <div class="q"><p><span class="tag">Q2</span>Do the paid consults stay on the site? <span class="on">· D1, D2</span></p><span class="pick">I'd pick: <b>D1.</b> A $50 half hour sitting next to "hire me to lead product" pulls the wrong way. You can still send the booking link to anyone who asks.</span></div>
-  </section>
-
-  <section class="flow options">
-    <h2>F · Where this came from · the two you liked in round 3, and your site today</h2>
-    <div class="boards">
-      <figure class="ab" data-mount="N1" data-same>
-        <span class="name">Family</span><div class="stage"></div>
-        <p class="cap">Round 3: the look your four products share.</p>
-      </figure>
-      <figure class="ab" data-mount="N3" data-same>
-        <span class="name">Letter</span><div class="stage"></div>
-        <p class="cap">Round 3: a short letter from you, with almost no design.</p>
-      </figure>
-      <figure class="ab" data-mount="A1" data-same>
-        <span class="name">Today</span><div class="stage"></div>
-        <p class="cap">Your site as it is now.</p>
-      </figure>
-    </div>
+    <div class="q"><p><span class="tag">Q2</span>Anything else to change before I build it? <span class="on">· L1, L2, P1, P2</span></p><span class="pick">I'd pick: <b>build it.</b> Say "lock it" with your answer to Q1 and I start.</span></div>
   </section>
 </main>
 
@@ -127,7 +113,7 @@
       <li><b>C4</b> The job history shows the career break in the same words as LinkedIn. The other way is to leave it out and let the dates skip.</li>
       <li><b>C5</b> The resume button gives the new resume, with your phone number taken off the web copy. The other way is phone number on.</li>
       <li><b>C6</b> Email stays pete@peteknowsai.xyz. I couldn't confirm it reaches you, so tell me if it doesn't.</li>
-      <li><b>C7</b> The call link books the free 30-minute slot you already have on Cal.com. The 15-minute one goes.</li>
+      <li><b>C7</b> Your call: the only booking is the free 30-minute slot you already have on Cal.com. The paid consults and the 15-minute slot come off the site.</li>
       <li><b>C8</b> peteknowsai.xyz without the www doesn't load today. I point it at the site, which is one DNS record on your domain.</li>
       <li><b>C9</b> Same code and same host: the repo you have, on Cloudflare Pages. The leftovers from the app builder it started in come out. The other way is a rebuild on Next.js and Vercel, your usual stack, which buys nothing for one static page.</li>
       <li><b>C10</b> Link previews get fixed. Today they point at the address that doesn't load and crop your face. The broken /whatsapp page goes.</li>
@@ -135,48 +121,72 @@
       <li><b>C12</b> No tracking and no contact form.</li>
       <li><b>C13</b> Nothing moves except what you point at, and nothing moves at all for a visitor who has asked their device for less motion.</li>
       <li><b>C14</b> Going live: when it passes my checks I upload it to www.peteknowsai.xyz myself. Locking this board is your yes to that. Say "preview first" and you get a private link before it replaces the live site.</li>
-      <li><b>C15</b> Color stays quiet: dark ink on a pale page, with one soft green for a highlighted phrase. Your portrait and the product pictures carry the rest.</li>
-      <li><b>C16</b> The letter is the whole page. No sections with headings, and no boxes besides the four products and the history list.</li>
+      <li><b>C15</b> Color stays quiet: dark ink on a pale page, with one soft green for a highlighted phrase. Your portrait and the four characters carry the rest.</li>
+      <li><b>C16</b> The letter is the whole page. No sections with headings, and no boxes.</li>
       <li><b>C17</b> The top bar has three things: email, book a call and the resume. The other way is links that jump down the page, which a letter this short doesn't need.</li>
       <li><b>C18</b> The letter is signed "Pete" in the same type as the rest. The other way is a handwritten signature, which I left out because it reads as decoration.</li>
+      <li><b>C19</b> Your call: the page names no town. It doesn't say remote either, since a remote job is something you can raise on a call.</li>
+      <li><b>C20</b> The four characters are copied from your live product sites as they are. On your sites they blink and move. Here they hold still, per C13.</li>
     </ul>
   </details>
   <details>
     <summary>For the record</summary>
     <ul>
-      <li>Today's site is a link list started in an app builder: Vite, React and Tailwind, last changed June 2025. It never names the agency, a product, a client, Paonia or the job hunt.</li>
+      <li>Today's site is a link list started in an app builder: Vite, React and Tailwind, last changed June 2025. It never names the agency, a product, a client or the job hunt.</li>
       <li>It is served from Cloudflare Pages by manual upload. A push to main deploys nothing.</li>
       <li>The resume it serves is the old one, which ends at Matter.</li>
       <li>Link previews and the /whatsapp page point at the address without www, which has no web record.</li>
       <li>No tests, and lint is broken. The app builder's script still ships in the page head.</li>
-      <li>The product pictures in these frames were captured from the four live sites on 2026-11-17.</li>
-      <li>Round 1 was a full-color fruit crate label, which you called way too colorful. Round 2 was the same layout in black and white, and you asked for new directions. Round 3 drew four. You liked the family look and the letter and asked for the two combined, which is this round.</li>
+      <li>Round 1 was a full-color fruit crate label, which you called way too colorful. Round 2 was the same layout in black and white, and you asked for new directions. Round 3 drew four, and you asked for the family look and the letter combined. Round 4 was that mix. You liked it and asked for three changes: no Paonia, the free call as the only booking, and no row of four site screenshots, because the four sites look alike. This round makes those three.</li>
       <li>My notes on who the site is for were written from your LinkedIn, your resume and your messages, not from an interview. I assumed hiring managers and recruiters first and clients second. Tell me if that's wrong.</li>
     </ul>
   </details>
 </section>
 
-<template data-frame="L1" data-w="1280" data-h="874">
+<template data-frame="M1" data-w="1280" data-h="190">
+<link rel="stylesheet" href="site-redo.css">
+<div class="fam ltr">
+  <div class="col">
+    <p>Lately that's four products, all live. <a href="#">Cells</a> gives every employee an AI chief of staff. <a href="#">HomeZero</a> researches any address before you buy. <a href="#">Transparent Towns</a> tells you what your town decided, in plain words. <a href="#">Yeoman</a> finds small businesses for sale and shows the numbers.</p>
+  </div>
+</div>
+
+</template>
+
+<template data-frame="M2" data-w="1280" data-h="354">
+<link rel="stylesheet" href="site-redo.css">
+<div class="fam ltr">
+  <div class="col"><p>Lately that's four products, all live. Open any of them.</p></div>
+  <div class="plist"><a href="#"><b>Cells</b><span>An AI chief of staff for every employee.</span><i>cells.md</i></a><a href="#"><b>HomeZero</b><span>Research any address before you buy.</span><i>homezero.md</i></a><a href="#"><b>Transparent Towns</b><span>What your town decided, in plain words.</span><i>ttowns.org</i></a><a href="#"><b>Yeoman</b><span>Small businesses for sale, with the numbers.</span><i>yeoman.md</i></a></div>
+</div>
+
+</template>
+
+<template data-frame="M3" data-w="1280" data-h="299">
+<link rel="stylesheet" href="site-redo.css">
+<div class="fam ltr">
+  <div class="col"><p>Lately that's four products, all live. Open any of them.</p></div>
+  <div class="crew"><a href="#"><img src="site-assets/mascot-cells.svg" alt=""><b>Cells</b><span>An AI chief of staff for every employee.</span></a><a href="#"><img src="site-assets/mascot-homezero.svg" alt=""><b>HomeZero</b><span>Research any address before you buy.</span></a><a href="#"><img src="site-assets/mascot-ttowns.svg" alt=""><b>Transparent Towns</b><span>What your town decided, in plain words.</span></a><a href="#"><img src="site-assets/mascot-yeoman.svg" alt=""><b>Yeoman</b><span>Small businesses for sale, with the numbers.</span></a></div>
+</div>
+
+</template>
+
+<template data-frame="L1" data-w="1280" data-h="766">
 <link rel="stylesheet" href="site-redo.css">
 <div class="fam ltr">
   <div class="bar"><b>Pete Knows AI</b><a href="#">Email</a><a href="#">Book a call</a><a class="k" href="#">Resume</a></div>
   <p class="hi"><img src="site-assets/portrait.jpg" alt="">Hi, I'm Pete.</p>
   <h1>I build AI agents <img src="site-assets/portrait.jpg" alt="Painted portrait of Pete in round orange sunglasses"><br>and ship them myself.</h1>
   <div class="col">
-    <p>I've led product for twenty years and founded a company that was acquired. Since 2025 I've run a one-person shop in Paonia, Colorado that <mark>takes an idea to working software</mark>, with coding agents doing most of the typing.</p>
-    <p>Lately that's four products, all live. Open any of them.</p>
+    <p>I've led product for twenty years and founded a company that was acquired. Since 2025 I've run a one-person shop that <mark>takes an idea to working software</mark>, with coding agents doing most of the typing.</p>
   </div>
-  <div class="four">
-    <a href="#"><img src="site-assets/cells.jpg" alt=""><b>Cells</b><span>An AI chief of staff for every employee.</span></a>
-    <a href="#"><img src="site-assets/homezero.jpg" alt=""><b>HomeZero</b><span>Research any address before you buy.</span></a>
-    <a href="#"><img src="site-assets/ttowns.jpg" alt=""><b>Transparent Towns</b><span>What your town decided, in plain words.</span></a>
-    <a href="#"><img src="site-assets/yeoman.jpg" alt=""><b>Yeoman</b><span>Small businesses for sale, with the numbers.</span></a>
-  </div>
+  <div class="col"><p>Lately that's four products, all live. Open any of them.</p></div>
+  <div class="crew"><a href="#"><img src="site-assets/mascot-cells.svg" alt=""><b>Cells</b><span>An AI chief of staff for every employee.</span></a><a href="#"><img src="site-assets/mascot-homezero.svg" alt=""><b>HomeZero</b><span>Research any address before you buy.</span></a><a href="#"><img src="site-assets/mascot-ttowns.svg" alt=""><b>Transparent Towns</b><span>What your town decided, in plain words.</span></a><a href="#"><img src="site-assets/mascot-yeoman.svg" alt=""><b>Yeoman</b><span>Small businesses for sale, with the numbers.</span></a></div>
 </div>
 
 </template>
 
-<template data-frame="L2" data-w="1280" data-h="986">
+<template data-frame="L2" data-w="1280" data-h="1213">
 <link rel="stylesheet" href="site-redo.css">
 <div class="fam ltr">
   <div class="col">
@@ -196,32 +206,30 @@
   </div>
   <div class="col">
     <p>Now I'm looking for a team using AI for <mark>something that matters</mark>: health, schools, towns, climate, public benefit. I want the work to make a difference, and I'd like it to be fun.</p>
+    <p><a href="#">Email me</a>, <a href="#">book a 30-minute call</a>, or <a href="#">read my resume</a>.</p>
+    <p class="sign">Pete</p>
   </div>
+  <div class="foot2"><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">X</a><span>© 2026 Pete McCarthy</span></div>
 </div>
 
 </template>
 
-<template data-frame="P1" data-w="390" data-h="983">
+<template data-frame="P1" data-w="390" data-h="889">
 <link rel="stylesheet" href="site-redo.css">
 <div class="fam ltr">
   <div class="bar"><b>Pete Knows AI</b><a href="#">Email</a><a href="#">Book a call</a><a class="k" href="#">Resume</a></div>
   <p class="hi"><img src="site-assets/portrait.jpg" alt="">Hi, I'm Pete.</p>
   <h1>I build AI agents <img src="site-assets/portrait.jpg" alt="Painted portrait of Pete in round orange sunglasses"><br>and ship them myself.</h1>
   <div class="col">
-    <p>I've led product for twenty years and founded a company that was acquired. Since 2025 I've run a one-person shop in Paonia, Colorado that <mark>takes an idea to working software</mark>, with coding agents doing most of the typing.</p>
-    <p>Lately that's four products, all live. Open any of them.</p>
+    <p>I've led product for twenty years and founded a company that was acquired. Since 2025 I've run a one-person shop that <mark>takes an idea to working software</mark>, with coding agents doing most of the typing.</p>
   </div>
-  <div class="four">
-    <a href="#"><img src="site-assets/cells.jpg" alt=""><b>Cells</b><span>An AI chief of staff for every employee.</span></a>
-    <a href="#"><img src="site-assets/homezero.jpg" alt=""><b>HomeZero</b><span>Research any address before you buy.</span></a>
-    <a href="#"><img src="site-assets/ttowns.jpg" alt=""><b>Transparent Towns</b><span>What your town decided, in plain words.</span></a>
-    <a href="#"><img src="site-assets/yeoman.jpg" alt=""><b>Yeoman</b><span>Small businesses for sale, with the numbers.</span></a>
-  </div>
+  <div class="col"><p>Lately that's four products, all live. Open any of them.</p></div>
+  <div class="crew"><a href="#"><img src="site-assets/mascot-cells.svg" alt=""><b>Cells</b><span>An AI chief of staff for every employee.</span></a><a href="#"><img src="site-assets/mascot-homezero.svg" alt=""><b>HomeZero</b><span>Research any address before you buy.</span></a><a href="#"><img src="site-assets/mascot-ttowns.svg" alt=""><b>Transparent Towns</b><span>What your town decided, in plain words.</span></a><a href="#"><img src="site-assets/mascot-yeoman.svg" alt=""><b>Yeoman</b><span>Small businesses for sale, with the numbers.</span></a></div>
 </div>
 <script>document.body.className = "phone";</script>
 </template>
 
-<template data-frame="P2" data-w="390" data-h="1588">
+<template data-frame="P2" data-w="390" data-h="1554">
 <link rel="stylesheet" href="site-redo.css">
 <div class="fam ltr">
   <div class="col">
@@ -241,83 +249,12 @@
   </div>
   <div class="col">
     <p>Now I'm looking for a team using AI for <mark>something that matters</mark>: health, schools, towns, climate, public benefit. I want the work to make a difference, and I'd like it to be fun.</p>
-  </div>
-  <div class="col">
     <p><a href="#">Email me</a>, <a href="#">book a 30-minute call</a>, or <a href="#">read my resume</a>.</p>
     <p class="sign">Pete</p>
-    <p class="from">Pete McCarthy · Paonia, Colorado</p>
-    
   </div>
   <div class="foot2"><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">X</a><span>© 2026 Pete McCarthy</span></div>
 </div>
 <script>document.body.className = "phone";</script>
-</template>
-
-<template data-frame="D1" data-w="1280" data-h="285">
-<link rel="stylesheet" href="site-redo.css">
-<div class="fam ltr">
-  <div class="col">
-    <p><a href="#">Email me</a>, <a href="#">book a 30-minute call</a>, or <a href="#">read my resume</a>.</p>
-    <p class="sign">Pete</p>
-    <p class="from">Pete McCarthy · Paonia, Colorado</p>
-    
-  </div>
-  <div class="foot2"><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">X</a><span>© 2026 Pete McCarthy</span></div>
-</div>
-
-</template>
-
-<template data-frame="D2" data-w="1280" data-h="376">
-<link rel="stylesheet" href="site-redo.css">
-<div class="fam ltr">
-  <div class="col">
-    <p><a href="#">Email me</a>, <a href="#">book a 30-minute call</a>, or <a href="#">read my resume</a>.</p>
-    <p class="sign">Pete</p>
-    <p class="from">Pete McCarthy · Paonia, Colorado</p>
-    <p class="ps">P.S. Need a hand with a short AI project instead? <a href="#">Book a paid consult</a>: 30 minutes for $50, an hour for $100.</p>
-  </div>
-  <div class="foot2"><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">X</a><span>© 2026 Pete McCarthy</span></div>
-</div>
-
-</template>
-
-<template data-frame="N1" data-w="1280" data-h="800">
-<link rel="stylesheet" href="site-redo.css">
-<div class="fam">
-  <div class="bar"><b>Pete Knows AI</b><a href="#">Products</a><a href="#">Client work</a><a href="#">History</a><a href="#">Contact</a><a class="k" href="#">Resume</a></div>
-  <h1>I build AI agents <img src="site-assets/portrait.jpg" alt="Pete"><br>and ship them myself.</h1>
-  <div class="say">
-    <p>Product leader for twenty years, founder with an exit. Since 2025, a one-person shop in Paonia, Colorado that <mark>takes an idea to working software</mark>, with coding agents doing most of the typing.</p>
-    <div class="go"><a href="#">Email Pete</a><a class="k" href="#">See the four products</a></div>
-  </div>
-  <div class="four">
-    <a href="#"><img src="site-assets/cells.jpg" alt=""><b>Cells</b><span>An AI chief of staff for every employee.</span></a>
-    <a href="#"><img src="site-assets/homezero.jpg" alt=""><b>HomeZero</b><span>Research any address before you buy.</span></a>
-    <a href="#"><img src="site-assets/ttowns.jpg" alt=""><b>Transparent Towns</b><span>What your town decided, in plain words.</span></a>
-    <a href="#"><img src="site-assets/yeoman.jpg" alt=""><b>Yeoman</b><span>Small businesses for sale, with the numbers.</span></a>
-  </div>
-</div>
-
-</template>
-
-<template data-frame="N3" data-w="1280" data-h="800">
-<link rel="stylesheet" href="site-redo.css">
-<div class="let"><div class="col">
-  <img src="site-assets/portrait.jpg" alt="Pete">
-  <p>Hi, I'm Pete. I build AI agents and ship them myself.</p>
-  <p>I've led product for twenty years and founded a company that was acquired. Since 2025 I've run a one-person shop that takes an idea to working software, with coding agents doing most of the typing.</p>
-  <p>Lately that's four products, all live: <a href="#">Cells</a>, <a href="#">HomeZero</a>, <a href="#">Transparent Towns</a> and <a href="#">Yeoman</a>. And three client builds: CommonLight, Port32 and Peggy.</p>
-  <p>I'm looking for a team using AI for something that matters: health, schools, towns, climate, public benefit. I want the work to make a difference, and I'd like it to be fun.</p>
-  <p><a href="#">Email me</a>, <a href="#">book a call</a>, or <a href="#">read my resume</a>.</p>
-  <p class="sig">Pete McCarthy, Paonia, Colorado</p>
-</div></div>
-
-</template>
-
-<template data-frame="A1" data-w="1280" data-h="960">
-<link rel="stylesheet" href="site-redo.css">
-<img src="site-assets/today-desktop.png" alt="Today" style="width:1280px;max-width:none">
-
 </template>
 
 <script>
