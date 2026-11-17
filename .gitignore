@@ -5,3 +5,4 @@ dist
 .env*
 .impeccable/config.local.json
 .ship-*
+.impeccable/review/
