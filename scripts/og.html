@@ -3,8 +3,8 @@
   The link preview picture, public/og.png. It is rendered from the dev server, not from disk,
   so the fonts load. With `npm run dev -- --port 5187 --strictPort` running:
 
-  ~/.cache/puppeteer/chrome-headless-shell/*/*/chrome-headless-shell --headless --hide-scrollbars \
-    --virtual-time-budget=3000 --window-size=1200,630 \
+  "$(ls -d ~/.cache/puppeteer/chrome-headless-shell/*/*/chrome-headless-shell | tail -1)" \
+    --headless --hide-scrollbars --virtual-time-budget=3000 --window-size=1200,630 \
     --screenshot=public/og.png http://localhost:5187/scripts/og.html
 -->
 <html lang="en">

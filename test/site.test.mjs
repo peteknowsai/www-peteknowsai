@@ -97,6 +97,27 @@ test('nothing loads from another host, no script, no form', () => {
   }
 })
 
+test('every outside address is one the page is meant to have', () => {
+  const allowed = [...PRODUCTS, ...FOOT, BOOKING]
+  const urls = [...html.matchAll(/https?:\/\/[^"'\s)<>]+/g)].map((m) => m[0])
+  assert.ok(urls.length >= 10, `only ${urls.length} addresses found`)
+  for (const url of urls) {
+    assert.ok(allowed.includes(url) || url.startsWith(SITE), `unexpected address: ${url}`)
+  }
+  assert.doesNotMatch(html, /(?:src|href|srcset|content)="\/\//)
+  assert.doesNotMatch(html, /url\(\s*['"]?\/\//)
+})
+
+test('font preloads name the files the stylesheet loads', () => {
+  const css = readdirSync('dist/assets')
+    .filter((f) => f.endsWith('.css'))
+    .map((f) => readFileSync(`dist/assets/${f}`, 'utf8'))
+    .join('')
+  const preloads = [...html.matchAll(/<link rel="preload"[^>]*href="([^"]+)"/g)].map((m) => m[1])
+  assert.equal(preloads.length, 2)
+  for (const href of preloads) assert.ok(css.includes(href), `${href} is preloaded but never used`)
+})
+
 test('link preview points at www', () => {
   const meta = (key) =>
     (html.match(new RegExp(`<meta (?:property|name)="${key}" content="([^"]*)"`)) || [])[1] || ''
@@ -135,7 +156,7 @@ test('the resume has no phone number and no town', () => {
   } catch (e) {
     assert.fail(e.code === 'ENOENT' ? 'pdftotext not found: install poppler' : String(e))
   }
-  assert.doesNotMatch(words, /\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}/)
+  assert.doesNotMatch(words, /\(?\d{3}\)?[\s.\-–]*\d{3}[\s.\-–]*\d{4}/)
   assert.doesNotMatch(words, /Paonia|Colorado/i)
   assert.match(words, /Cells/)
 })

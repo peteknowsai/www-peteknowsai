@@ -6,3 +6,4 @@ dist
 .impeccable/config.local.json
 .ship-*
 .impeccable/review/
+.wrangler

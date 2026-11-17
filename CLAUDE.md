@@ -14,8 +14,8 @@ Docs home is `specs/`. The design of record is `specs/designs/2026-11-17-site-re
 - dev: `npm run dev -- --port <port> --strictPort`
 - test-auth: none
 - backend: none
-- preview: on demand. `npm run build && wrangler pages deploy dist --project-name peteknowsai --branch <branch>` prints a private preview URL. Use it when a check needs a production build, such as load time.
-- deploy: `npm run deploy`
+- preview: on demand. `npm run build && wrangler pages deploy dist --project-name peteknowsai --branch <branch>` prints a preview URL. Anyone who has that link can open it, so upload nothing private. Use it when a check needs a production build, such as load time.
+- deploy: `npm run deploy` (refuses to run unless the checkout is a clean main)
 - live: a push to main deploys nothing. `npm run deploy` uploads `dist/` to the Cloudflare Pages project `peteknowsai`, which serves https://www.peteknowsai.xyz and https://peteknowsai.xyz. Load both after an upload.
 - land: pr
 

@@ -46,7 +46,7 @@ img { display: block; max-width: 100%; }
 .bar nav { display: flex; align-items: center; gap: 30px; }
 .bar a, .foot a { text-decoration: underline; text-underline-offset: 4px; }
 .bar .k { background: var(--ink); color: #fff; padding: 9px 16px; border-radius: 6px; font-weight: 600; text-decoration: none; }
-.bar .k:hover { background: oklch(0.34 0.01 95); }
+.bar .k:hover, .bar .k:focus-visible { background: oklch(0.34 0.01 95); }
 
 /* the letter */
 .hi { font: 300 23px/1.3 var(--slab); margin: 26px 0 0; }

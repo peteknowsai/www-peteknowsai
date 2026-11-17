@@ -121,7 +121,7 @@ Recorded on 2026-11-17 from the shipped `index.html` and `src/site.css`. The loc
 
 The whole site is one letter from one person. It opens with a greeting, makes its claim in a single large headline, keeps talking in plain paragraphs, and ends with a signature. Nothing on the page is a section: there is one heading, no subheadings, no cards, no boxes and no panels. When the letter needs to show something, it stops for a moment, shows it as a plain row or a plain list, and picks the sentence back up.
 
-The look is the one Pete's four live products share: a pale warm page, near-black warm ink, Roboto Slab Light for what the letter says, Archivo for the small working text around it, and one soft green that behaves like a highlighter pen. The page is quiet and airy on a laptop, with a wide left-aligned column and generous room to the right. Nothing is centered.
+The look is the one Pete's four live products share: a pale warm page, near-black warm ink, Roboto Slab Light for what the letter says, Archivo for the small working text around it, and one soft green that behaves like a highlighter pen. The page is quiet and airy on a laptop, with a wide left-aligned column and generous room to the right. No text is centered; only the page container is, in a wide window.
 
 The page is still. The only thing that moves is a product character when the visitor points at it or tabs to it, and under reduced motion it does not move either.
 
@@ -278,6 +278,6 @@ The signature component: a character that turns out to be a live product.
 - **Don't** use the green as a fill, border, link color or icon color.
 - **Don't** add a shadow for depth, a gradient or a second background color.
 - **Don't** set text lighter than Quiet Ink (ink at 62 percent).
-- **Don't** center text or a column.
+- **Don't** center text, or a column inside the page. Only the page container centers in the window.
 - **Don't** animate anything on load or on scroll.
 - **Don't** add a picture that is not the painted portrait or a product's own character.

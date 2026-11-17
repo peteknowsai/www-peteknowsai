@@ -33,7 +33,7 @@ This builds the site and runs the tests in `test/` against `dist/`. It needs `pd
 npm run deploy
 ```
 
-This runs the checks, then uploads `dist/` to the Cloudflare Pages project `peteknowsai` with `wrangler`. A push to main deploys nothing on its own.
+This only runs from a clean checkout of main. It runs the checks, then uploads `dist/` to the Cloudflare Pages project `peteknowsai` with `wrangler`, which has to be installed and logged in first (`npm install -g wrangler`, then `wrangler login`). A push to main deploys nothing on its own.
 
 ## Files that are made, not written
 
