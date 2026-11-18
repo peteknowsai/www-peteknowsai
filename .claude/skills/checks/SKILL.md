@@ -61,7 +61,8 @@ What every run sees that is not the change: skip it, never chase it.
 
 ## Learned
 
-- Frames: `specs/designs/2026-11-17-site-redo.html` holds frames L1, L2, P1 and P2 in `<template data-frame>`. Frame 2 starts with its own top margin, so shift it 30px on desktop or 22px on a phone before comparing pixels with the built page. (site-redo, 2026-11-17)
+- Frames: `specs/designs/2026-11-17-site-redo.html` holds L1, L2, P1 and P2 in `<template data-frame>`, each a fixed `data-h` tall, so a change that adds lines must raise it (the frame's `scrollHeight` says by how much). Frame 2 starts with its own top margin: shift it 30px on desktop, 22px on a phone, before comparing pixels. (history-titles, 2026-11-18)
 - Link preview: redraw `public/og.png` with the command at the top of `scripts/og.html` while the dev server runs. A redraw drops the picture's embedded origin note, so embed it again. (site-redo, 2026-11-17)
 - Hidden picture: an `<img>` with `width` and `height` attributes that is `display: none` at desktop fails Lighthouse's aspect-ratio audit, so the phone-only portrait is sized in CSS. (site-redo, 2026-11-17)
 - Resume: check `/resume.pdf` with `fetch` from the page and `pdftotext` on the file, not by clicking; a headless browser has no PDF viewer. (site-redo, 2026-11-17)
+- Production build: after `npm run check`, `npx vite preview --port <port> --strictPort` serves `dist/` locally, enough to walk a wording or CSS change on the real build with no Cloudflare upload. (history-titles, 2026-11-18)
