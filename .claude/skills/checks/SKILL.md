@@ -55,6 +55,8 @@ What every run sees that is not the change: skip it, never chase it.
 | Layout shift up to 0.05 at 390 on Slow 4G | performance trace | the two web fonts arrive after first paint and swap in; it reads 0.00 when they arrive first |
 | `is-crawlable` fails | Lighthouse SEO on a preview link | Cloudflare adds `x-robots-tag: noindex` to preview links only |
 | `llms-txt` and `ard-schema` fail | Lighthouse Agentic Browsing | the host serves the page for those paths; the site has neither file |
+| `/cdn-cgi/scripts/.../email-decode.min.js`, a script from `static.cloudflareinsights.com` and a POST to `/cdn-cgi/rum` | requests on the live domain only | Cloudflare adds its email protection and its visit counter at the edge; the build and `pages.dev` links have neither |
+| The bare domain will not resolve right after its DNS record is added | curl or a browser on the machine that looked it up just before | the system resolver remembers the earlier miss for up to 30 minutes; `dig` and a `curl --resolve` pinned to the public answer prove it meanwhile |
 | LinkedIn answers 999 | curl of the foot link | LinkedIn's bot block; the link opens in a browser |
 
 ## Learned
