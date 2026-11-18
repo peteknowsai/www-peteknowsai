@@ -8,8 +8,9 @@ It is one page, written as a letter: who he is, the four AI products he has live
 
 - `index.html` is the whole page. `src/site.css` is all of its styles.
 - The words on the page are the storyboard's, and a test compares the two. To change the copy, change `specs/designs/2026-11-17-site-redo.html` first.
-- Vite builds it into `dist/`. There is no framework and no JavaScript on the page.
-- Fonts are Roboto Slab and Archivo, served from the site itself. Nothing loads from another host, and there is no tracking.
+- Vite builds it into `dist/`. There is no framework and no JavaScript in the build.
+- Fonts are Roboto Slab and Archivo, served from the site itself. The build loads nothing from another host and has no tracking.
+- On the live domain Cloudflare adds two scripts of its own that this repo does not ship: email address protection, which rewrites the `mailto:` links and decodes them in the browser, and its Web Analytics beacon from `static.cloudflareinsights.com`. Both are settings on the Cloudflare zone, and a `pages.dev` link has neither.
 - Pictures live in `public/images/`: the painted portrait and each product's own character.
 
 ## Run it

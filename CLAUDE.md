@@ -23,7 +23,7 @@ Docs home is `specs/`. The design of record is `specs/designs/2026-11-17-site-re
 
 - The page names no town.
 - The only booking link is the free 30-minute call, `https://cal.com/peteknowai/30min`. The account name has no "s" after "know".
-- Nothing loads from another host. Fonts come from `node_modules/@fontsource-variable/*` at build time.
+- Nothing loads from another host. Fonts come from `node_modules/@fontsource-variable/*` at build time. That is true of the build. On the live domain Cloudflare adds its email protection script and its Web Analytics beacon at the edge; both are settings on the Cloudflare zone, and a `pages.dev` link has neither.
 - Nothing moves except on hover or focus, and nothing at all under reduced motion.
 - The words on the page are the storyboard's. A test compares them, so a copy change starts in the storyboard.
 - `public/resume.pdf` is printed from a source kept outside this repo, with the phone number and the town removed. Never commit the source.
