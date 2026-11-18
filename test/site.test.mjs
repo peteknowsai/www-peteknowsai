@@ -151,6 +151,9 @@ test('history has eight rows with the career break', () => {
   assert.ok(hist, 'no history list')
   assert.equal((hist[1].match(/<li\b/g) || []).length, 8)
   assert.match(hist[1], /Career break/)
+  const titles = [...hist[1].matchAll(/<span class="ti">([^<]*)<\/span>/g)].map((m) => m[1])
+  assert.equal(titles.length, 8)
+  for (const title of titles) assert.doesNotMatch(title, /\bSr\b/, `spell out Senior: ${title}`)
 })
 
 test('the resume has no phone number and no town', () => {

@@ -91,7 +91,7 @@
     "breakpoints": [
       { "name": "narrow-gutter", "value": "1100px", "purpose": "max-width. Side padding 72px to 40px." },
       { "name": "two-by-two", "value": "1000px", "purpose": "max-width. Products two by two; history title moves under the description." },
-      { "name": "phone", "value": "640px", "purpose": "max-width. 20px padding, 64px bar with the button only, portrait moves to the greeting, products stack, history titles visually hidden." }
+      { "name": "phone", "value": "640px", "purpose": "max-width. 20px padding, 64px bar with the button only, portrait moves to the greeting, products stack, history title on its own 14px line under the company." }
     ],
     "focus": { "value": "outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 3px", "purpose": "Every focusable element." },
     "widths": [
@@ -146,7 +146,7 @@
       "kind": "custom",
       "refersTo": "history-row",
       "description": "One job per row under a hairline: years, company, what happened, title. Not a link.",
-      "html": "<ul class=\"ds-hist\" role=\"list\"><li class=\"ds-r\"><span class=\"ds-yr\">2013 to 2014</span> <b>Checkwise</b> <span class=\"ds-what\">Bootstrapped a food safety platform to a 7-figure acquisition in under 2 years.</span> <span class=\"ds-ti\">CEO and Founder</span></li><li class=\"ds-r\"><span class=\"ds-yr\">2000 to 2003</span> <b>OpenTable</b> <span class=\"ds-what\">Early team, back when restaurants ran on paper reservation books.</span> <span class=\"ds-ti\">Sr. Implementation Specialist</span></li></ul>",
+      "html": "<ul class=\"ds-hist\" role=\"list\"><li class=\"ds-r\"><span class=\"ds-yr\">2013 to 2014</span> <b>Checkwise</b> <span class=\"ds-what\">Bootstrapped a food safety platform to a 7-figure acquisition in under 2 years.</span> <span class=\"ds-ti\">CEO and Founder</span></li><li class=\"ds-r\"><span class=\"ds-yr\">2000 to 2003</span> <b>OpenTable</b> <span class=\"ds-what\">Early team, back when restaurants ran on paper reservation books.</span> <span class=\"ds-ti\">Senior Implementation Specialist</span></li></ul>",
       "css": ".ds-hist { list-style: none; padding: 0; margin: 2px 0 38px; max-width: 1010px; border-bottom: 1px solid var(--rule); font-family: var(--sans); color: var(--ink); } .ds-r { display: grid; grid-template-columns: 7.2em 6.6em minmax(0, 1fr) auto; gap: 0 22px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15.5px; line-height: 1.45; } .ds-r b { font-weight: 700; } .ds-what { text-wrap: pretty; } .ds-yr, .ds-ti { color: var(--quiet); }"
     },
     {
