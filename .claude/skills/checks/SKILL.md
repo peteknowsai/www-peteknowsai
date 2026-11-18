@@ -26,7 +26,7 @@ subject to `.claude/skills/checks/<topic>.md` behind one line saying when to rea
 ## Walk
 
 - **The letter, desktop**: open `/` at 1280 by 800 → the bar with Email, Book a call and Resume; "Hi, I'm Pete."; the headline on two lines with the round portrait in line one; two green highlights; four product characters in one row; eight history rows; "Pete"; LinkedIn, GitHub, X. At 1440 the page is 1280 wide and centered.
-- **The letter, phone**: 390 wide → only Resume in the bar, the portrait beside "Hi, I'm Pete.", none in the headline, products as four rows, history with years on the right and no job titles. Nothing scrolls sideways down to 320.
+- **The letter, phone**: 390 wide → only Resume in the bar, the portrait beside "Hi, I'm Pete.", none in the headline, products as four rows, history with years on the right and each job title on its own line under the company. Nothing scrolls sideways down to 320.
 - **In between**: products go two by two at 1000 and below; job titles sit under the description from 641 to 1000.
 - **Links**: each product opens its own site; both booking links open the free 30-minute Cal.com page; Resume and "read my resume" serve `/resume.pdf`, two pages.
 - **Keyboard**: Tab from the top visits all 13 links in reading order, each with a 2px ring; the Resume button also lightens.

@@ -236,8 +236,8 @@ body.phone .ltr .four span{font-size:13.5px;padding:0 12px;align-self:start}
 body.phone .ltr .hist .r{grid-template-columns:minmax(0,1fr) auto;font-size:15px}
 body.phone .ltr .hist b{grid-column:1;grid-row:1}
 body.phone .ltr .hist .yr{grid-column:2;grid-row:1}
-body.phone .ltr .hist .what{grid-column:1 / 3}
-body.phone .ltr .hist .ti{display:none}
+body.phone .ltr .hist .what{grid-column:1 / 3;grid-row:3}
+body.phone .ltr .hist .ti{grid-column:1 / 3;grid-row:2;font-size:14px}
 body.phone .ltr .sign{font-size:38px;margin-top:28px}
 body.phone .ltr .ps{font-size:16.5px}
 body.phone .ltr .from{font-size:14.5px}

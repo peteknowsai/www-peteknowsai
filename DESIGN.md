@@ -194,7 +194,7 @@ The product row is a four-column grid with a 30px gap. The history row is a four
 Responsive changes, all `max-width`:
 - **1100px and below:** side padding drops to 40px.
 - **1000px and below:** products go two by two. The job title in a history row moves under the description, in the same column.
-- **640px and below:** side padding is 20px and the bar is 64px tall. The bar keeps only the site name and the button; the two text links are hidden there and remain at the end of the letter. The portrait leaves the headline and sits at 46px, round, at the start of the greeting. The headline loses its forced break and wraps on its own. Products stack one per row, each with a 62px character to the left of its name and caption, 14px apart. A history row becomes company and years on one line with the description under them; the job title is visually hidden and still read aloud by a screen reader.
+- **640px and below:** side padding is 20px and the bar is 64px tall. The bar keeps only the site name and the button; the two text links are hidden there and remain at the end of the letter. The portrait leaves the headline and sits at 46px, round, at the start of the greeting. The headline loses its forced break and wraps on its own. Products stack one per row, each with a 62px character to the left of its name and caption, 14px apart. A history row becomes company and years on one line, the job title on its own line under them at 14px in Quiet Ink, then the description.
 
 ## Elevation & Depth
 
